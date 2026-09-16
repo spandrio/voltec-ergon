@@ -15,9 +15,9 @@
         <a href="/trabajos" class="btn btn-ghost">Ver Eco Smart Grid →</a>
       </div>
       <div class="hero-stats">
-        <div><div class="num">6</div><div class="lbl">Integrantes del equipo</div></div>
-        <div><div class="num">3</div><div class="lbl">Comisiones técnicas</div></div>
-        <div><div class="num">0.325</div><div class="lbl">kg CO₂ / kWh (factor AR)</div></div>
+        <div><div class="num" data-count="6">6</div><div class="lbl">Integrantes del equipo</div></div>
+        <div><div class="num" data-count="3">3</div><div class="lbl">Comisiones técnicas</div></div>
+        <div><div class="num" data-count="0.325">0.325</div><div class="lbl">kg CO₂ / kWh (factor AR)</div></div>
       </div>
     </div>
 
@@ -49,40 +49,40 @@
 
 <div class="stats-bar">
   <div class="wrap stats-grid">
-    <div><div class="num">&lt;5W</div><div class="lbl">Umbral consumo vampiro</div></div>
-    <div><div class="num">Wi-Fi</div><div class="lbl">Sincronización instantánea</div></div>
-    <div><div class="num">5</div><div class="lbl">Meses de desarrollo (jun—oct)</div></div>
-    <div><div class="num">1</div><div class="lbl">Sistema modular por artefacto</div></div>
+    <div class="reveal"><div class="num">&lt;5W</div><div class="lbl">Umbral consumo vampiro</div></div>
+    <div class="reveal"><div class="num">Wi-Fi</div><div class="lbl">Sincronización instantánea</div></div>
+    <div class="reveal"><div class="num" data-count="5">5</div><div class="lbl">Meses de desarrollo (jun—oct)</div></div>
+    <div class="reveal"><div class="num" data-count="1">1</div><div class="lbl">Sistema modular por artefacto</div></div>
   </div>
 </div>
 
 <section class="bg-white">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Lo que hacemos</span>
       <h2>Servicios pensados para que la energía deje de ser un número a fin de mes</h2>
       <p>Trabajamos de punta a punta: desde medir qué consume cada artefacto hasta entregar una app que te avisa y te deja actuar.</p>
     </div>
     <div class="service-grid">
-      <div class="service-card">
+      <div class="service-card reveal">
         <div class="ico">01</div>
         <h4>Auditoría energética</h4>
         <p>Relevamos el consumo real de tu hogar o institución, artefacto por artefacto, y detectamos dónde se pierde energía.</p>
         <a href="/servicios" class="link">Ver más →</a>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <div class="ico">02</div>
         <h4>Instalación y monitoreo IoT</h4>
         <p>Instalamos módulos Eco Smart Grid (ESP32 + PZEM-004T) que miden voltaje, corriente y potencia en tiempo real.</p>
         <a href="/servicios" class="link">Ver más →</a>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <div class="ico">03</div>
         <h4>Desarrollo de software</h4>
         <p>Construimos dashboards y apps a medida — como Energhost en Flutter — conectados a Firebase para control remoto.</p>
         <a href="/servicios" class="link">Ver más →</a>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal">
         <div class="ico">04</div>
         <h4>Consultoría en sustentabilidad</h4>
         <p>Calculamos huella de carbono y proponemos acciones concretas para reducir el gasto energético y el impacto ambiental.</p>
@@ -94,27 +94,27 @@
 
 <section>
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Cómo trabajamos</span>
       <h2>Un proceso claro, de la medición a la acción</h2>
     </div>
     <div class="process-grid">
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="n">1</div>
         <h4>Diagnóstico</h4>
         <p>Relevamos el espacio y definimos qué artefactos monitorear según el consumo estimado.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="n">2</div>
         <h4>Diseño de la solución</h4>
         <p>Dimensionamos los módulos necesarios y definimos alertas, umbrales y reportes.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="n">3</div>
         <h4>Instalación y desarrollo</h4>
         <p>Montamos el hardware y configuramos la app Energhost para ese usuario o institución.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step reveal">
         <div class="n">4</div>
         <h4>Monitoreo y soporte</h4>
         <p>El sistema sigue midiendo, alertando y generando reportes — con acompañamiento nuestro.</p>
@@ -125,11 +125,11 @@
 
 <section class="bg-white">
   <div class="wrap">
-    <div class="section-head" style="margin-bottom:34px;">
+    <div class="section-head reveal" style="margin-bottom:34px;">
       <span class="eyebrow">Portafolio</span>
       <h2>El proyecto que más nos representa</h2>
     </div>
-    <div class="case-card">
+    <div class="case-card reveal">
       <div>
         <div class="tags"><span>IoT</span><span>ESP32</span><span>Flutter</span><span>Firebase</span></div>
         <h3>Eco Smart Grid + App Energhost</h3>

@@ -134,11 +134,20 @@ section{padding:88px 0;}
 
 /* ---------- HERO ---------- */
 .hero{padding:76px 0 60px;position:relative;overflow:hidden;}
-.hero::before{
-  content:"";position:absolute;top:-180px;right:-180px;width:520px;height:520px;
-  background:radial-gradient(circle,rgba(0,87,214,.10),transparent 70%);
-  pointer-events:none;
+.hero::before,.hero::after{
+  content:"";position:absolute;border-radius:50%;pointer-events:none;
 }
+.hero::before{
+  top:-180px;right:-180px;width:520px;height:520px;
+  background:radial-gradient(circle,rgba(0,87,214,.10),transparent 70%);
+  animation:blobDrift 16s ease-in-out infinite;
+}
+.hero::after{
+  bottom:-200px;left:-160px;width:420px;height:420px;
+  background:radial-gradient(circle,rgba(15,184,138,.10),transparent 70%);
+  animation:blobDrift 20s ease-in-out infinite reverse;
+}
+@keyframes blobDrift{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-26px,18px) scale(1.08);}}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;}}
 .hero h1{font-size:48px;line-height:1.08;margin:18px 0 20px;}
@@ -158,7 +167,10 @@ section{padding:88px 0;}
   color:#fff;
   box-shadow:0 30px 60px -20px rgba(10,46,107,.45);
   position:relative;
+  animation:dashFloat 6s ease-in-out infinite;
 }
+@keyframes dashFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.dash-metrics .v{transition:color .2s ease;}
 .dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
 .dash-top .name{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:#AFC6EE;}
 .dash-top .live{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--green-energy);}
@@ -190,11 +202,19 @@ section{padding:88px 0;}
 .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
 @media(max-width:960px){.service-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.service-grid{grid-template-columns:1fr;}}
-.service-card{background:var(--bg-white);border:1px solid var(--line);border-radius:14px;padding:26px;transition:.18s;}
-.service-card:hover{border-color:var(--blue-brand);box-shadow:0 18px 34px -22px rgba(0,87,214,.4);transform:translateY(-2px);}
+.service-card{background:var(--bg-white);border:1px solid var(--line);border-radius:14px;padding:26px;transition:.25s ease;position:relative;overflow:hidden;}
+.service-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue-brand),var(--green-energy));
+  transform:scaleX(0);transform-origin:left;transition:transform .3s ease;
+}
+.service-card:hover{border-color:var(--blue-brand);box-shadow:0 18px 34px -22px rgba(0,87,214,.4);transform:translateY(-4px);}
+.service-card:hover::before{transform:scaleX(1);}
+.service-card:hover .ico{background:var(--blue-brand);color:#fff;}
 .service-card .ico{
   width:42px;height:42px;border-radius:10px;background:rgba(0,87,214,.08);color:var(--blue-brand);
   display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:15px;margin-bottom:16px;
+  transition:.25s ease;
 }
 .service-card h4{font-size:17px;margin-bottom:8px;}
 .service-card p{font-size:14px;color:var(--ink-soft);margin-bottom:14px;}
@@ -226,7 +246,8 @@ section{padding:88px 0;}
 .process-step p{font-size:13.5px;color:var(--ink-soft);}
 
 /* ---------- PORTFOLIO / CASE STUDY ---------- */
-.case-card{background:var(--bg-white);border:1px solid var(--line);border-radius:18px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.case-card{background:var(--bg-white);border:1px solid var(--line);border-radius:18px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;transition:.3s ease;}
+.case-card:hover{box-shadow:0 26px 54px -30px rgba(0,87,214,.4);transform:translateY(-3px);}
 @media(max-width:900px){.case-card{grid-template-columns:1fr;}}
 .case-card .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
 .case-card .tags span{font-family:var(--mono);font-size:11px;background:rgba(0,87,214,.08);color:var(--blue-brand);padding:4px 9px;border-radius:6px;font-weight:600;}
@@ -243,9 +264,10 @@ section{padding:88px 0;}
   background:linear-gradient(160deg,var(--navy-deep),var(--blue-brand) 120%);
   position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;
 }
-.device-visual .ring{position:absolute;border:1px solid rgba(255,255,255,.14);border-radius:50%;}
+.device-visual .ring{position:absolute;border:1px solid rgba(255,255,255,.14);border-radius:50%;animation:spinSlow 22s linear infinite;}
 .device-visual .ring.r1{width:70%;height:70%;}
-.device-visual .ring.r2{width:48%;height:48%;}
+.device-visual .ring.r2{width:48%;height:48%;animation-duration:16s;animation-direction:reverse;}
+@keyframes spinSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 .device-visual .core{
   width:26%;height:26%;background:#fff;border-radius:14px;
   display:flex;align-items:center;justify-content:center;
@@ -256,10 +278,12 @@ section{padding:88px 0;}
   position:absolute;background:rgba(255,255,255,.95);color:var(--navy-deep);
   font-family:var(--mono);font-size:11px;padding:6px 10px;border-radius:7px;font-weight:600;
   box-shadow:0 10px 20px rgba(0,0,0,.15);
+  animation:floatChip 3.6s ease-in-out infinite;
 }
+@keyframes floatChip{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
 .float-tag.t1{top:14%;left:10%;}
-.float-tag.t2{bottom:16%;right:8%;}
-.float-tag.t3{top:50%;right:2%;}
+.float-tag.t2{bottom:16%;right:8%;animation-delay:.5s;}
+.float-tag.t3{top:50%;right:2%;animation-delay:1s;}
 
 /* ---------- TECH GRID ---------- */
 .tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
@@ -366,6 +390,21 @@ footer{padding:56px 0 30px;}
   section{padding:60px 0;}
   .case-card{padding:26px;}
 }
+
+/* ---------- SCROLL REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+.reveal.in-view{opacity:1;transform:none;}
+.service-grid .reveal:nth-child(2),.process-grid .reveal:nth-child(2){transition-delay:.08s;}
+.service-grid .reveal:nth-child(3),.process-grid .reveal:nth-child(3){transition-delay:.16s;}
+.service-grid .reveal:nth-child(4),.process-grid .reveal:nth-child(4){transition-delay:.24s;}
+.stats-grid .reveal:nth-child(2){transition-delay:.06s;}
+.stats-grid .reveal:nth-child(3){transition-delay:.12s;}
+.stats-grid .reveal:nth-child(4){transition-delay:.18s;}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  .dash-card,.device-visual .ring,.float-tag,.hero::before,.hero::after{animation:none !important;}
+}
 </style>
 </head>
 <body>
@@ -431,5 +470,90 @@ footer{padding:56px 0 30px;}
   </div>
 </footer>
 
+<script>
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animateCounter(el){
+    var raw = el.dataset.count;
+    var target = parseFloat(raw);
+    var decimals = (raw.split('.')[1] || '').length;
+    if (reduceMotion || isNaN(target)) { el.textContent = raw; return; }
+    var duration = 900;
+    var start = performance.now();
+    function tick(now){
+      var progress = Math.min(1, (now - start) / duration);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = (target * eased).toFixed(decimals);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var revealEls = document.querySelectorAll('.reveal');
+  var counters = document.querySelectorAll('[data-count]');
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+    counters.forEach(function(el){ el.textContent = el.dataset.count; });
+  } else {
+    var revealIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el){ revealIo.observe(el); });
+
+    var counterIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting && !entry.target.dataset.counted) {
+          entry.target.dataset.counted = '1';
+          animateCounter(entry.target);
+          counterIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function(el){ counterIo.observe(el); });
+
+    // Safety net: a fast/instant scroll (scrollbar drag, "End" key, anchor jump) can move an
+    // element straight from "below the fold" to "above it" without a rendered frame in between,
+    // so the observer never sees it intersect and it would stay hidden/unfilled forever.
+    // Deliberately not rAF-throttled: in a backgrounded/hidden tab rAF can stall indefinitely,
+    // which would defeat the point of a safety net. The work here is cheap either way.
+    var lastSweep = 0;
+    function sweepMissed(){
+      var now = Date.now();
+      if (now - lastSweep < 100) return;
+      lastSweep = now;
+      document.querySelectorAll('.reveal:not(.in-view)').forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in-view');
+      });
+      document.querySelectorAll('[data-count]').forEach(function(el){
+        if (el.dataset.counted) return;
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) { el.dataset.counted = '1'; animateCounter(el); }
+      });
+    }
+    window.addEventListener('scroll', sweepMissed, { passive: true });
+    window.addEventListener('resize', sweepMissed);
+    sweepMissed();
+  }
+
+  // Live-feel jitter on the hero dashboard widget
+  var metrics = document.querySelectorAll('.dash-metrics .v');
+  if (!reduceMotion && metrics.length >= 3) {
+    var base = [219.6, 0.68, 148];
+    setInterval(function(){
+      metrics[0].innerHTML = (base[0] + (Math.random() - 0.5) * 0.6).toFixed(1) + ' <span>V</span>';
+      metrics[1].innerHTML = (base[1] + (Math.random() - 0.5) * 0.05).toFixed(2) + ' <span>A</span>';
+      metrics[2].innerHTML = Math.round(base[2] + (Math.random() - 0.5) * 6) + ' <span>W</span>';
+    }, 2200);
+  }
+})();
+</script>
 </body>
 </html>
