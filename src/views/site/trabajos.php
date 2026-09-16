@@ -5,7 +5,7 @@
  */
 ?>
 <section class="page-header">
-  <div class="wrap">
+  <div class="wrap reveal">
     <span class="eyebrow">Trabajos</span>
     <h1>Eco Smart Grid + App Energhost</h1>
     <p class="lead">Nuestro caso insignia: un sistema IoT modular para el monitoreo, análisis y optimización del consumo energético en tiempo real.</p>
@@ -15,12 +15,12 @@
 <section class="bg-white" style="padding-top:20px;">
   <div class="wrap problem-grid" style="display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:start;">
     <div>
-      <div class="section-head" style="margin-bottom:34px;">
+      <div class="section-head reveal" style="margin-bottom:34px;">
         <span class="eyebrow">El problema</span>
         <h2>Tu factura te dice cuánto pagaste. No te dice por qué.</h2>
         <p>Un número acumulado a fin de mes no permite identificar qué artefacto gasta de más, ni cuánto se pierde en aparatos que "están apagados" pero siguen consumiendo.</p>
       </div>
-      <div style="background:var(--bg-white);border:1px solid var(--line);border-radius:14px;padding:26px 28px;">
+      <div class="reveal" style="background:var(--bg-white);border:1px solid var(--line);border-radius:14px;padding:26px 28px;">
         <div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px;"><span>Factura eléctrica — Agosto</span><span style="font-family:var(--mono);font-size:11px;color:#B0392E;background:#FBE6E3;padding:3px 8px;border-radius:5px;">Sin detalle</span></div>
         <div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px;"><span>Consumo total</span><span>312 kWh</span></div>
         <div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px;"><span>¿Qué artefacto consumió más?</span><span>—</span></div>
@@ -29,15 +29,15 @@
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:22px;">
-      <div style="display:flex;gap:16px;">
+      <div class="reveal-left" style="display:flex;gap:16px;">
         <div style="width:40px;height:40px;flex-shrink:0;border-radius:9px;background:rgba(0,87,214,.08);display:flex;align-items:center;justify-content:center;color:var(--blue-brand);font-family:var(--mono);font-weight:600;">01</div>
         <div><h4 style="font-family:var(--display);font-size:16px;margin-bottom:4px;color:var(--navy-deep);">Consumo vampiro invisible</h4><p style="font-size:14.5px;color:var(--ink-soft);">Dispositivos "apagados" que siguen tomando corriente de la red durante horas, todos los días del mes.</p></div>
       </div>
-      <div style="display:flex;gap:16px;">
+      <div class="reveal-left" style="display:flex;gap:16px;transition-delay:.1s;">
         <div style="width:40px;height:40px;flex-shrink:0;border-radius:9px;background:rgba(0,87,214,.08);display:flex;align-items:center;justify-content:center;color:var(--blue-brand);font-family:var(--mono);font-weight:600;">02</div>
         <div><h4 style="font-family:var(--display);font-size:16px;margin-bottom:4px;color:var(--navy-deep);">Cero trazabilidad por artefacto</h4><p style="font-size:14.5px;color:var(--ink-soft);">La factura mensual agrupa todo el consumo del hogar en un solo número, sin desglose posible.</p></div>
       </div>
-      <div style="display:flex;gap:16px;">
+      <div class="reveal-left" style="display:flex;gap:16px;transition-delay:.2s;">
         <div style="width:40px;height:40px;flex-shrink:0;border-radius:9px;background:rgba(0,87,214,.08);display:flex;align-items:center;justify-content:center;color:var(--blue-brand);font-family:var(--mono);font-weight:600;">03</div>
         <div><h4 style="font-family:var(--display);font-size:16px;margin-bottom:4px;color:var(--navy-deep);">Impacto ambiental invisible</h4><p style="font-size:14.5px;color:var(--ink-soft);">Nadie ve, en el momento, cuánto CO₂ genera dejar un electrodoméstico enchufado de más.</p></div>
       </div>
@@ -47,33 +47,33 @@
 
 <section>
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Arquitectura del sistema</span>
       <h2>Del enchufe a tu bolsillo, en milisegundos</h2>
       <p>El sensor mide, el ESP32 transmite, la nube sincroniza y Energhost reacciona — sin que el usuario tenga que recargar nada.</p>
     </div>
     <div class="flow" style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;">
-      <div class="flow-step" style="padding:0 14px;">
+      <div class="flow-step reveal" style="padding:0 14px;">
         <div class="process-step"><div class="n">1</div>
         <h4>Sensor PZEM-004T</h4>
         <p>Mide voltaje, corriente, potencia y energía acumulada del artefacto conectado, con aislamiento galvánico.</p></div>
       </div>
-      <div class="flow-step" style="padding:0 14px;">
+      <div class="flow-step reveal" style="padding:0 14px;transition-delay:.08s;">
         <div class="process-step"><div class="n">2</div>
         <h4>Microcontrolador ESP32</h4>
         <p>Procesa las lecturas y las sube por Wi-Fi a Firebase Realtime Database y Blynk.</p></div>
       </div>
-      <div class="flow-step" style="padding:0 14px;">
+      <div class="flow-step reveal" style="padding:0 14px;transition-delay:.16s;">
         <div class="process-step"><div class="n">3</div>
         <h4>Firebase + Google Sheets</h4>
         <p>Firebase sincroniza en tiempo real; Apps Script vuelca cada lectura a una planilla de auditoría accesible por QR.</p></div>
       </div>
-      <div class="flow-step" style="padding:0 14px;">
+      <div class="flow-step reveal" style="padding:0 14px;transition-delay:.24s;">
         <div class="process-step"><div class="n">4</div>
         <h4>App Energhost (Flutter)</h4>
         <p>Escucha los cambios en Firebase y actualiza el dashboard al instante, sin recargar la pantalla.</p></div>
       </div>
-      <div class="flow-step" style="padding:0 14px;">
+      <div class="flow-step reveal" style="padding:0 14px;transition-delay:.32s;">
         <div class="process-step"><div class="n">5</div>
         <h4>Control remoto</h4>
         <p>El usuario apaga un relé desde la app; el ESP32 detecta el cambio y corta la corriente en milisegundos.</p></div>
@@ -83,7 +83,7 @@
 </section>
 
 <section class="bg-white">
-  <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+  <div class="wrap reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
     <div class="device-visual">
       <div class="ring r1"></div>
       <div class="ring r2"></div>
@@ -107,7 +107,7 @@
 </section>
 
 <section class="bg-navy">
-  <div class="wrap impact-grid">
+  <div class="wrap impact-grid reveal">
     <div class="impact-copy">
       <span class="eyebrow">Huella de carbono</span>
       <h2 style="font-size:32px;margin:14px 0 14px;">Cada kWh que ahorrás, se traduce en CO₂ que no emitís</h2>
@@ -130,7 +130,7 @@
 </section>
 
 <section>
-  <div class="wrap" style="text-align:center;">
+  <div class="wrap reveal" style="text-align:center;">
     <span class="eyebrow">¿Querés algo parecido?</span>
     <h2 style="margin-top:14px;font-size:30px;">Podemos auditar tu espacio con el mismo sistema</h2>
     <a href="/contacto" class="btn btn-primary" style="margin-top:22px;">Solicitar auditoría →</a>

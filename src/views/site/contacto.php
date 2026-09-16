@@ -9,7 +9,7 @@ $errores = $errores ?? [];
 $old = $old ?? [];
 ?>
 <section class="page-header">
-  <div class="wrap">
+  <div class="wrap reveal">
     <span class="eyebrow">Contacto</span>
     <h1>¿Listos para ver cuánto se está escapando?</h1>
     <p class="lead">Contanos qué espacio querés auditar y te respondemos con una propuesta de instalación.</p>
@@ -19,25 +19,25 @@ $old = $old ?? [];
 <section class="bg-white" style="padding-top:20px;">
   <div class="wrap contact-grid">
     <div>
-      <div class="contact-card">
+      <div class="contact-card reveal-left">
         <div class="ico">@</div>
         <div><h5>Email</h5><a href="mailto:ergonvoltec@gmail.com">ergonvoltec@gmail.com</a></div>
       </div>
-      <div class="contact-card">
+      <div class="contact-card reveal-left" style="transition-delay:.06s;">
         <div class="ico">#</div>
         <div><h5>Institución</h5><p>E.E.S.T. N°4 de Berazategui — Proyecto institucional con Fundación YPF</p></div>
       </div>
-      <div class="contact-card">
+      <div class="contact-card reveal-left" style="transition-delay:.12s;">
         <div class="ico">~</div>
         <div><h5>Horarios de atención</h5><p>Lunes a viernes, horario escolar</p></div>
       </div>
-      <div class="contact-card">
+      <div class="contact-card reveal-left" style="transition-delay:.18s;">
         <div class="ico">→</div>
         <div><h5>Proyecto técnico</h5><a href="https://github.com/spandrio/voltec">Ver repositorio de Eco Smart Grid</a></div>
       </div>
     </div>
 
-    <div class="contact-form">
+    <div class="contact-form reveal">
       <?php if ($enviado): ?>
         <div style="background:rgba(15,184,138,.1);border:1px solid rgba(15,184,138,.35);border-radius:10px;padding:16px 18px;color:#0A7A5C;font-size:14.5px;">
           <b>¡Listo!</b> Recibimos tu consulta. Te vamos a contactar a la brevedad.
@@ -82,20 +82,20 @@ $old = $old ?? [];
 
 <section>
   <div class="wrap">
-    <div class="section-head" style="margin:0 auto 30px;text-align:center;max-width:560px;">
+    <div class="section-head reveal" style="margin:0 auto 30px;text-align:center;max-width:560px;">
       <span class="eyebrow">Preguntas frecuentes</span>
       <h2>Antes de escribirnos</h2>
     </div>
     <div class="faq-list" style="margin:0 auto;">
-      <details class="faq-item">
+      <details class="faq-item reveal">
         <summary>¿Cuánto tarda una instalación?</summary>
         <div class="a">Depende de la cantidad de artefactos a monitorear. Un módulo se instala y configura en menos de una hora.</div>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal" style="transition-delay:.08s;">
         <summary>¿Necesito internet en el lugar?</summary>
         <div class="a">Sí, los módulos usan Wi-Fi para sincronizar con Firebase y Blynk en tiempo real.</div>
       </details>
-      <details class="faq-item">
+      <details class="faq-item reveal" style="transition-delay:.16s;">
         <summary>¿Puedo monitorear más de un artefacto?</summary>
         <div class="a">Sí, el sistema es modular: instalás un módulo Eco Smart Grid por cada artefacto que quieras medir y controlar.</div>
       </details>

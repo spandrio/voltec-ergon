@@ -5,7 +5,7 @@
  */
 ?>
 <section class="page-header">
-  <div class="wrap">
+  <div class="wrap reveal">
     <span class="eyebrow">Servicios</span>
     <h1>Todo lo que necesitás para dejar de adivinar cuánto consumís.</h1>
     <p class="lead">Desde la medición inicial hasta el software que te avisa y te deja actuar — cubrimos cada etapa del monitoreo energético.</p>
@@ -16,7 +16,7 @@
   <div class="wrap">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;">
 
-      <div class="service-detail">
+      <div class="service-detail reveal">
         <div class="service-detail-head">
           <div class="ico-lg">01</div>
           <div>
@@ -33,7 +33,7 @@
         </ul>
       </div>
 
-      <div class="service-detail" style="border-color:var(--blue-brand);">
+      <div class="service-detail reveal" style="border-color:var(--blue-brand);">
         <div class="service-detail-head">
           <div class="ico-lg">02</div>
           <div>
@@ -50,7 +50,7 @@
         </ul>
       </div>
 
-      <div class="service-detail">
+      <div class="service-detail reveal">
         <div class="service-detail-head">
           <div class="ico-lg">03</div>
           <div>
@@ -67,7 +67,7 @@
         </ul>
       </div>
 
-      <div class="service-detail">
+      <div class="service-detail reveal">
         <div class="service-detail-head">
           <div class="ico-lg">04</div>
           <div>
@@ -90,23 +90,23 @@
 
 <section>
   <div class="wrap">
-    <div class="section-head" style="margin:0 auto 40px;text-align:center;max-width:560px;">
+    <div class="section-head reveal" style="margin:0 auto 40px;text-align:center;max-width:560px;">
       <span class="eyebrow">Stack técnico</span>
       <h2>Las herramientas con las que construimos</h2>
     </div>
     <div class="tech-grid">
-      <div class="tech-card"><div class="name">ESP32</div><div class="desc">Microcontrolador</div></div>
-      <div class="tech-card"><div class="name">PZEM-004T</div><div class="desc">Sensor V3.0</div></div>
-      <div class="tech-card"><div class="name">Firebase</div><div class="desc">Realtime DB</div></div>
-      <div class="tech-card"><div class="name">Blynk 2.0</div><div class="desc">IoT cloud</div></div>
-      <div class="tech-card"><div class="name">Flutter</div><div class="desc">App Energhost</div></div>
-      <div class="tech-card"><div class="name">Fusion 360</div><div class="desc">Diseño 3D</div></div>
+      <div class="tech-card reveal"><div class="name">ESP32</div><div class="desc">Microcontrolador</div></div>
+      <div class="tech-card reveal"><div class="name">PZEM-004T</div><div class="desc">Sensor V3.0</div></div>
+      <div class="tech-card reveal"><div class="name">Firebase</div><div class="desc">Realtime DB</div></div>
+      <div class="tech-card reveal"><div class="name">Blynk 2.0</div><div class="desc">IoT cloud</div></div>
+      <div class="tech-card reveal"><div class="name">Flutter</div><div class="desc">App Energhost</div></div>
+      <div class="tech-card reveal"><div class="name">Fusion 360</div><div class="desc">Diseño 3D</div></div>
     </div>
   </div>
 </section>
 
 <section class="bg-navy">
-  <div class="wrap" style="text-align:center;">
+  <div class="wrap reveal" style="text-align:center;">
     <span class="eyebrow">¿Necesitás algo puntual?</span>
     <h2 style="margin-top:14px;font-size:30px;">Cada instalación es distinta. Hablemos de la tuya.</h2>
     <p style="max-width:520px;margin:14px auto 30px;">Contanos el espacio que querés monitorear y armamos una propuesta a medida.</p>
