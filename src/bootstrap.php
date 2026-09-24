@@ -17,10 +17,6 @@ if (!in_array($env, $allowedEnvs, true)) {
 
 $debug = $env === "dev";
 
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
-
 require_once __DIR__ . '/middlewares/logMiddleware.php';
 
 $app = AppFactory::create();

@@ -12,13 +12,36 @@ $navItems = [
   '/trabajos' => 'Trabajos',
   '/contacto' => 'Contacto',
 ];
+$pageTitle = $title ?? 'Voltec Ergon';
+$pageDescription = $description ?? 'Voltec Ergon: consultora técnica de energía IoT. Auditoría energética, instalación y monitoreo con Eco Smart Grid, y desarrollo de software a medida.';
+$canonicalUrl = $canonicalUrl ?? null;
+$ogImage = $ogImage ?? null;
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?= html($title ?? 'Voltec Ergon') ?></title>
+<title><?= html($pageTitle) ?></title>
+<meta name="description" content="<?= html($pageDescription) ?>">
+<?php if ($canonicalUrl): ?>
+<link rel="canonical" href="<?= html($canonicalUrl) ?>">
+<?php endif; ?>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Voltec Ergon">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="<?= html($pageTitle) ?>">
+<meta property="og:description" content="<?= html($pageDescription) ?>">
+<?php if ($canonicalUrl): ?>
+<meta property="og:url" content="<?= html($canonicalUrl) ?>">
+<?php endif; ?>
+<?php if ($ogImage): ?>
+<meta property="og:image" content="<?= html($ogImage) ?>">
+<?php endif; ?>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<?= html($pageTitle) ?>">
+<meta name="twitter:description" content="<?= html($pageDescription) ?>">
+<meta name="theme-color" content="#0A2E6B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -366,7 +389,7 @@ section{padding:88px 0;}
 .field input,.field select,.field textarea{
   width:100%;border:1.5px solid var(--line);border-radius:8px;padding:11px 13px;font-family:var(--body);font-size:14px;color:var(--ink);background:var(--bg-light);
 }
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue-brand);}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--blue-brand);outline-offset:1px;border-color:var(--blue-brand);}
 .field textarea{resize:vertical;min-height:100px;}
 
 /* ---------- CTA / FOOTER ---------- */
@@ -481,7 +504,10 @@ footer{padding:56px 0 30px;}
     </div>
     <div class="footer-bottom">
       <span>© 2026 Voltec Ergon. Proyecto técnico — Eco Smart Grid / Energhost.</span>
-      <span>Factor de emisión: 0.325 kgCO₂/kWh (red eléctrica argentina)</span>
+      <span style="display:flex;gap:18px;">
+        <a href="/privacidad">Política de Privacidad</a>
+        <a href="/terminos">Términos y Condiciones</a>
+      </span>
     </div>
   </div>
 </footer>

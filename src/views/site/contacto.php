@@ -74,6 +74,7 @@ $old = $old ?? [];
             <textarea id="mensaje" name="mensaje" placeholder="Contanos qué querés monitorear..."><?= html($old['mensaje'] ?? '') ?></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Enviar consulta</button>
+          <p style="font-size:12px;color:var(--ink-soft);margin-top:12px;text-align:center;">Al enviar este formulario aceptás nuestra <a href="/privacidad" style="color:var(--blue-brand);">Política de Privacidad</a>.</p>
         </form>
       <?php endif; ?>
     </div>

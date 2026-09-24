@@ -9,12 +9,13 @@
     "slim/php-view": "^3.4"
   },
   "scripts": {
-    "serve": "php -S localhost:8000 -t public"
+    "serve": "php -S localhost:8000 -t public public/router.php"
   },
   "autoload": {
     "files": [
       "./src/utils/html.php",
-      "./src/utils/view.php"
+      "./src/utils/view.php",
+      "./src/utils/url.php"
     ]
   },
   "license": "MIT"
