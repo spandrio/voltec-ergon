@@ -11,8 +11,8 @@ $old = $old ?? [];
 <section class="page-header">
   <div class="wrap reveal">
     <span class="eyebrow">Contacto</span>
-    <h1>¿Listos para ver cuánto se está escapando?</h1>
-    <p class="lead">Contanos qué espacio querés auditar y te respondemos con una propuesta de instalación.</p>
+    <h1>Contanos qué necesitás.</h1>
+    <p class="lead">Completá el formulario con tu consulta y te respondemos con una propuesta.</p>
   </div>
 </section>
 
@@ -26,10 +26,6 @@ $old = $old ?? [];
       <div class="contact-card reveal-left" style="transition-delay:.06s;">
         <div class="ico">#</div>
         <div><h5>Institución</h5><p>E.E.S.T. N°4 de Berazategui — Proyecto institucional con Fundación YPF</p></div>
-      </div>
-      <div class="contact-card reveal-left" style="transition-delay:.12s;">
-        <div class="ico">~</div>
-        <div><h5>Horarios de atención</h5><p>Lunes a viernes, horario escolar</p></div>
       </div>
       <div class="contact-card reveal-left" style="transition-delay:.18s;">
         <div class="ico">→</div>
@@ -62,16 +58,16 @@ $old = $old ?? [];
             <input type="email" id="email" name="email" value="<?= html($old['email'] ?? '') ?>" placeholder="tu@email.com">
           </div>
           <div class="field">
-            <label for="espacio">Tipo de espacio</label>
-            <select id="espacio" name="espacio">
-              <option value="hogar" <?= ($old['espacio'] ?? '') === 'hogar' ? 'selected' : '' ?>>Hogar</option>
-              <option value="institucional" <?= ($old['espacio'] ?? '') === 'institucional' ? 'selected' : '' ?>>Institucional</option>
-              <option value="comercial" <?= ($old['espacio'] ?? '') === 'comercial' ? 'selected' : '' ?>>Comercial</option>
+            <label for="servicio">Servicio que te interesa</label>
+            <select id="servicio" name="servicio">
+              <?php foreach (["web" => "Desarrollo web a medida", "iot" => "Electrónica e IoT", "auditoria" => "Auditoría energética", "soporte" => "Soporte y mantenimiento"] as $valor => $texto): ?>
+                <option value="<?= html($valor) ?>" <?= ($old['servicio'] ?? '') === $valor ? 'selected' : '' ?>><?= html($texto) ?></option>
+              <?php endforeach; ?>
             </select>
           </div>
           <div class="field">
             <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Contanos qué querés monitorear..."><?= html($old['mensaje'] ?? '') ?></textarea>
+            <textarea id="mensaje" name="mensaje" placeholder="Contanos qué querés resolver..."><?= html($old['mensaje'] ?? '') ?></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Enviar consulta</button>
           <p style="font-size:12px;color:var(--ink-soft);margin-top:12px;text-align:center;">Al enviar este formulario aceptás nuestra <a href="/privacidad" style="color:var(--blue-brand);">Política de Privacidad</a>.</p>
@@ -89,16 +85,16 @@ $old = $old ?? [];
     </div>
     <div class="faq-list" style="margin:0 auto;">
       <details class="faq-item reveal">
-        <summary>¿Cuánto tarda una instalación?</summary>
-        <div class="a">Depende de la cantidad de artefactos a monitorear. Un módulo se instala y configura en menos de una hora.</div>
+        <summary>¿Qué servicios ofrecen?</summary>
+        <div class="a">Desarrollo web a medida, electrónica e IoT, auditoría energética y soporte. El detalle está en la página de <a href="/servicios" style="color:var(--blue-brand);">Servicios</a>.</div>
       </details>
       <details class="faq-item reveal" style="transition-delay:.08s;">
-        <summary>¿Necesito internet en el lugar?</summary>
-        <div class="a">Sí, los módulos usan Wi-Fi para sincronizar con Firebase y Blynk en tiempo real.</div>
+        <summary>¿Cómo pido un presupuesto?</summary>
+        <div class="a">Completá el formulario de esta página o escribinos por email. Relevamos tu caso y te enviamos un presupuesto antes de empezar.</div>
       </details>
       <details class="faq-item reveal" style="transition-delay:.16s;">
-        <summary>¿Puedo monitorear más de un artefacto?</summary>
-        <div class="a">Sí, el sistema es modular: instalás un módulo Eco Smart Grid por cada artefacto que quieras medir y controlar.</div>
+        <summary>¿Qué datos míos guardan?</summary>
+        <div class="a">Solo los que dejás en el formulario, para responderte. Está explicado en la <a href="/privacidad" style="color:var(--blue-brand);">Política de Privacidad</a>.</div>
       </details>
     </div>
   </div>

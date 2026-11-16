@@ -6,41 +6,32 @@
 ?>
 <section class="page-header">
   <div class="wrap reveal">
-    <span class="eyebrow">Trabajos</span>
-    <h1>Eco Smart Grid + App Energhost</h1>
-    <p class="lead">Nuestro caso insignia: un sistema IoT modular para el monitoreo, análisis y optimización del consumo energético en tiempo real.</p>
+    <span class="eyebrow">Trabajos · Caso de un cliente</span>
+    <h1>Eco Smart Grid</h1>
+    <p class="lead">Un medidor de consumo eléctrico por artefacto, hecho para la E.E.S.T. N°4 de Berazategui en el marco de la convocatoria de Fundación YPF.</p>
   </div>
 </section>
 
 <section class="bg-white" style="padding-top:20px;">
-  <div class="wrap problem-grid" style="display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:start;">
+  <div class="wrap two-col">
     <div>
       <div class="section-head reveal" style="margin-bottom:34px;">
-        <span class="eyebrow">El problema</span>
-        <h2>Tu factura te dice cuánto pagaste. No te dice por qué.</h2>
-        <p>Un número acumulado a fin de mes no permite identificar qué artefacto gasta de más, ni cuánto se pierde en aparatos que "están apagados" pero siguen consumiendo.</p>
+        <span class="eyebrow">El problema del cliente</span>
+        <h2>La factura dice cuánto se pagó. No dice por qué.</h2>
+        <p>Un número acumulado a fin de mes no permite saber qué artefacto gasta de más, ni cuánto se pierde en aparatos que parecen apagados pero siguen consumiendo.</p>
       </div>
-      <div class="reveal" style="background:var(--bg-white);border:1px solid var(--line);border-radius:14px;padding:26px 28px;">
-        <div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px;"><span>Factura eléctrica — Agosto</span><span style="font-family:var(--mono);font-size:11px;color:#B0392E;background:#FBE6E3;padding:3px 8px;border-radius:5px;">Sin detalle</span></div>
-        <div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px;"><span>Consumo total</span><span>312 kWh</span></div>
-        <div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px;"><span>¿Qué artefacto consumió más?</span><span>—</span></div>
-        <div style="display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px;"><span>¿Cuánto se perdió en standby?</span><span>—</span></div>
-        <div style="display:flex;justify-content:space-between;padding:11px 0;font-weight:700;color:var(--navy-deep);font-family:var(--mono);font-size:14.5px;"><span>Total a pagar</span><span>$ 84.300</span></div>
+      <div class="bill reveal">
+        <div><span>Factura eléctrica del mes</span><span class="bill-tag">Sin detalle</span></div>
+        <div><span>Consumo total</span><span>312 kWh</span></div>
+        <div><span>¿Qué artefacto consumió más?</span><span>—</span></div>
+        <div><span>¿Cuánto se perdió en standby?</span><span>—</span></div>
       </div>
+      <p class="fine reveal">Factura de ejemplo, con valores ilustrativos.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:22px;">
-      <div class="reveal-left" style="display:flex;gap:16px;">
-        <div style="width:40px;height:40px;flex-shrink:0;border-radius:9px;background:rgba(0,87,214,.08);display:flex;align-items:center;justify-content:center;color:var(--blue-brand);font-family:var(--mono);font-weight:600;">01</div>
-        <div><h4 style="font-family:var(--display);font-size:16px;margin-bottom:4px;color:var(--navy-deep);">Consumo vampiro invisible</h4><p style="font-size:14.5px;color:var(--ink-soft);">Dispositivos "apagados" que siguen tomando corriente de la red durante horas, todos los días del mes.</p></div>
-      </div>
-      <div class="reveal-left" style="display:flex;gap:16px;transition-delay:.1s;">
-        <div style="width:40px;height:40px;flex-shrink:0;border-radius:9px;background:rgba(0,87,214,.08);display:flex;align-items:center;justify-content:center;color:var(--blue-brand);font-family:var(--mono);font-weight:600;">02</div>
-        <div><h4 style="font-family:var(--display);font-size:16px;margin-bottom:4px;color:var(--navy-deep);">Cero trazabilidad por artefacto</h4><p style="font-size:14.5px;color:var(--ink-soft);">La factura mensual agrupa todo el consumo del hogar en un solo número, sin desglose posible.</p></div>
-      </div>
-      <div class="reveal-left" style="display:flex;gap:16px;transition-delay:.2s;">
-        <div style="width:40px;height:40px;flex-shrink:0;border-radius:9px;background:rgba(0,87,214,.08);display:flex;align-items:center;justify-content:center;color:var(--blue-brand);font-family:var(--mono);font-weight:600;">03</div>
-        <div><h4 style="font-family:var(--display);font-size:16px;margin-bottom:4px;color:var(--navy-deep);">Impacto ambiental invisible</h4><p style="font-size:14.5px;color:var(--ink-soft);">Nadie ve, en el momento, cuánto CO₂ genera dejar un electrodoméstico enchufado de más.</p></div>
-      </div>
+    <div class="prob-list">
+      <div class="reveal-left"><b>01</b><div><h4>Consumo en standby</h4><p>Aparatos que parecen apagados y siguen tomando corriente todo el día.</p></div></div>
+      <div class="reveal-left" style="transition-delay:.1s;"><b>02</b><div><h4>Sin detalle por artefacto</h4><p>La factura junta todo el consumo en un solo número.</p></div></div>
+      <div class="reveal-left" style="transition-delay:.2s;"><b>03</b><div><h4>Impacto ambiental que no se ve</h4><p>Nadie sabe cuánto CO₂ genera lo que deja enchufado.</p></div></div>
     </div>
   </div>
 </section>
@@ -48,59 +39,41 @@
 <section>
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Arquitectura del sistema</span>
-      <h2>Del enchufe a tu bolsillo, en milisegundos</h2>
-      <p>El sensor mide, el ESP32 transmite, la nube sincroniza y Energhost reacciona — sin que el usuario tenga que recargar nada.</p>
+      <span class="eyebrow">La solución</span>
+      <h2>Qué hace el prototipo hoy y qué viene después</h2>
+      <p>Separamos lo que ya funciona en el prototipo de lo que está diseñado para la próxima etapa.</p>
     </div>
-    <div class="flow" style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;">
-      <div class="flow-step reveal" style="padding:0 14px;">
-        <div class="process-step"><div class="n">1</div>
-        <h4>Sensor PZEM-004T</h4>
-        <p>Mide voltaje, corriente, potencia y energía acumulada del artefacto conectado, con aislamiento galvánico.</p></div>
-      </div>
-      <div class="flow-step reveal" style="padding:0 14px;transition-delay:.08s;">
-        <div class="process-step"><div class="n">2</div>
-        <h4>Microcontrolador ESP32</h4>
-        <p>Procesa las lecturas y las sube por Wi-Fi a Firebase Realtime Database y Blynk.</p></div>
-      </div>
-      <div class="flow-step reveal" style="padding:0 14px;transition-delay:.16s;">
-        <div class="process-step"><div class="n">3</div>
-        <h4>Firebase + Google Sheets</h4>
-        <p>Firebase sincroniza en tiempo real; Apps Script vuelca cada lectura a una planilla de auditoría accesible por QR.</p></div>
-      </div>
-      <div class="flow-step reveal" style="padding:0 14px;transition-delay:.24s;">
-        <div class="process-step"><div class="n">4</div>
-        <h4>App Energhost (Flutter)</h4>
-        <p>Escucha los cambios en Firebase y actualiza el dashboard al instante, sin recargar la pantalla.</p></div>
-      </div>
-      <div class="flow-step reveal" style="padding:0 14px;transition-delay:.32s;">
-        <div class="process-step"><div class="n">5</div>
-        <h4>Control remoto</h4>
-        <p>El usuario apaga un relé desde la app; el ESP32 detecta el cambio y corta la corriente en milisegundos.</p></div>
-      </div>
+    <div class="process-grid cols-5">
+      <div class="process-step reveal"><div class="n">1</div><h4>Mide</h4><p>Tres sensores PZEM-004T leen voltaje, corriente, potencia y energía de cada artefacto.</p></div>
+      <div class="process-step reveal"><div class="n">2</div><h4>Procesa</h4><p>Un ESP32 lee los tres sensores y calcula los valores.</p></div>
+      <div class="process-step reveal"><div class="n">3</div><h4>Muestra</h4><p>Una pantalla TFT de 2,2" presenta las mediciones y se recorre con botones.</p></div>
+      <div class="process-step reveal"><div class="n">4</div><h4>Corta</h4><p>Un botón por artefacto acciona su relé para cortar el suministro.</p></div>
+      <div class="process-step next reveal"><div class="n">5</div><h4>Próxima etapa</h4><p>Conexión Wi-Fi, registro en la nube y la app Energhost. Está diseñado, todavía no programado.</p></div>
     </div>
   </div>
 </section>
 
 <section class="bg-white">
-  <div class="wrap reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-    <div class="device-visual">
+  <div class="wrap two-col center">
+    <div class="device-visual reveal">
       <div class="ring r1"></div>
       <div class="ring r2"></div>
       <div class="core"><span>ESP32</span></div>
       <div class="float-tag t1">PZEM-004T</div>
       <div class="float-tag t2">Relé 220V</div>
-      <div class="float-tag t3">OLED 0.96"</div>
+      <div class="float-tag t3">Pantalla TFT</div>
     </div>
-    <div>
-      <span class="eyebrow">Hardware</span>
-      <h2 style="font-size:32px;margin:14px 0 14px;">Eco Smart Grid</h2>
-      <p style="color:var(--ink-soft);font-size:15.5px;">Un módulo inteligente por artefacto: mide, decide y corta el suministro, con carcasa propia impresa en 3D y pantalla local de diagnóstico.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px;">
-        <div style="border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--bg-white);"><div style="font-family:var(--mono);font-size:11px;color:var(--blue-brand);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Microcontrolador</div><div style="font-size:13.5px;font-weight:500;">ESP32, Wi-Fi nativo</div></div>
-        <div style="border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--bg-white);"><div style="font-family:var(--mono);font-size:11px;color:var(--blue-brand);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Sensor</div><div style="font-size:13.5px;font-weight:500;">PZEM-004T V3.0</div></div>
-        <div style="border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--bg-white);"><div style="font-family:var(--mono);font-size:11px;color:var(--blue-brand);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Actuador</div><div style="font-size:13.5px;font-weight:500;">Módulo relé de alta capacidad</div></div>
-        <div style="border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--bg-white);"><div style="font-family:var(--mono);font-size:11px;color:var(--blue-brand);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Pantalla local</div><div style="font-size:13.5px;font-weight:500;">OLED 0.96"</div></div>
+    <div class="reveal">
+      <span class="eyebrow">Componentes</span>
+      <h2 style="font-size:32px;margin:14px 0 14px;">Qué lleva adentro</h2>
+      <p style="color:var(--ink-soft);font-size:15.5px;">Todo va montado en una caja diseñada en CAD e impresa en 3D.</p>
+      <div class="spec-list">
+        <div class="spec"><div class="k">Microcontrolador</div><div class="v">ESP32</div></div>
+        <div class="spec"><div class="k">Sensores</div><div class="v">3 × PZEM-004T V3.0</div></div>
+        <div class="spec"><div class="k">Actuadores</div><div class="v">3 relés de 5 V</div></div>
+        <div class="spec"><div class="k">Pantalla</div><div class="v">TFT 2,2" ILI9341</div></div>
+        <div class="spec"><div class="k">Programa</div><div class="v">Arduino (C++)</div></div>
+        <div class="spec"><div class="k">Sitio web</div><div class="v">PHP, Slim y MySQL</div></div>
       </div>
     </div>
   </div>
@@ -110,30 +83,31 @@
   <div class="wrap impact-grid reveal">
     <div class="impact-copy">
       <span class="eyebrow">Huella de carbono</span>
-      <h2 style="font-size:32px;margin:14px 0 14px;">Cada kWh que ahorrás, se traduce en CO₂ que no emitís</h2>
-      <p>Energhost calcula tu huella de carbono usando el factor de emisión promedio de la red eléctrica argentina: 0.325 kg de CO₂ por cada kWh consumido.</p>
+      <h2 style="font-size:32px;margin:14px 0 14px;">Cada kWh que se ahorra es CO₂ que no se emite</h2>
+      <p>El cálculo usa el factor de emisión promedio de la red eléctrica argentina: 0,325 kg de CO₂ por cada kWh consumido.</p>
       <div class="stat-row">
-        <div><div class="num">0.49 kg</div><div class="lbl">CO₂/día — heladera típica</div></div>
-        <div><div class="num">0.10 kg</div><div class="lbl">CO₂ — 1h de licuadora</div></div>
+        <div><div class="num">0,49 kg</div><div class="lbl">CO₂ por día · heladera de 1,5 kWh</div></div>
+        <div><div class="num">0,10 kg</div><div class="lbl">CO₂ · licuadora, 0,3 kWh</div></div>
       </div>
     </div>
     <div class="calc">
-      <label for="kwh">Simulá tu consumo (kWh este mes)</label>
+      <label for="kwh">Simulá un consumo (kWh del mes)</label>
       <input type="range" id="kwh" min="10" max="500" value="150">
-      <div class="val-row"><span>Consumo estimado</span><b id="kwhVal">150 kWh</b></div>
+      <div class="val-row"><span>Consumo</span><b id="kwhVal">150 kWh</b></div>
       <div class="calc-result">
         <div class="box"><div class="l">Huella de carbono</div><div class="v" id="co2Val">48.75 kg</div></div>
         <div class="box amber"><div class="l">Costo estimado</div><div class="v" id="costVal">$ 40.500</div></div>
       </div>
+      <p class="calc-note">Costo calculado con una tarifa de ejemplo de $ 270 por kWh.</p>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap reveal" style="text-align:center;">
-    <span class="eyebrow">¿Querés algo parecido?</span>
-    <h2 style="margin-top:14px;font-size:30px;">Podemos auditar tu espacio con el mismo sistema</h2>
-    <a href="/contacto" class="btn btn-primary" style="margin-top:22px;">Solicitar auditoría →</a>
+    <span class="eyebrow">¿Necesitás algo parecido?</span>
+    <h2 style="margin-top:14px;font-size:30px;">Podemos hacer un proyecto así para tu organización</h2>
+    <a href="/contacto" class="btn btn-primary" style="margin-top:22px;">Pedir un presupuesto →</a>
   </div>
 </section>
 
@@ -142,12 +116,12 @@ const kwhInput = document.getElementById('kwh');
 const kwhVal = document.getElementById('kwhVal');
 const co2Val = document.getElementById('co2Val');
 const costVal = document.getElementById('costVal');
-const TARIFA = 270; // $/kWh estimado
+const TARIFA = 270;
 
 function updateCalc(){
   const kwh = parseFloat(kwhInput.value);
   kwhVal.textContent = kwh + ' kWh';
-  co2Val.textContent = (kwh * 0.325).toFixed(2) + ' kg';
+  co2Val.textContent = (kwh * 0.325).toFixed(2).replace('.', ',') + ' kg';
   costVal.textContent = '$ ' + Math.round(kwh * TARIFA).toLocaleString('es-AR');
 }
 kwhInput.addEventListener('input', updateCalc);

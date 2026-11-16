@@ -7,8 +7,8 @@
 <section class="page-header">
   <div class="wrap reveal">
     <span class="eyebrow">Equipo</span>
-    <h1>Tres comisiones, un mismo sistema.</h1>
-    <p class="lead">Somos seis integrantes divididos por especialidad técnica, coordinados desde Voltec Ergon como si fuéramos una consultora real: cada comisión responde por su parte del sistema.</p>
+    <h1>Tres comisiones, un mismo equipo.</h1>
+    <p class="lead">Somos seis integrantes divididos por especialidad técnica. Cada comisión responde por su parte de cada proyecto.</p>
   </div>
 </section>
 
@@ -18,11 +18,11 @@
       <div class="team-card reveal">
         <span class="tag">Comisión</span>
         <h3>Software</h3>
-        <p style="color:var(--ink-soft);font-size:14px;">Programación del ESP32, configuración de Firebase y Blynk, y desarrollo de la lógica del sistema.</p>
+        <p style="color:var(--ink-soft);font-size:14px;">Programa del microcontrolador y desarrollo de los sitios y sistemas web.</p>
         <ul>
-          <li>Consola Blynk 2.0 y tokens de conexión</li>
-          <li>Apps Script → Google Sheets</li>
-          <li>App Energhost en Flutter/Dart</li>
+          <li>Firmware del ESP32 en Arduino (C++)</li>
+          <li>Sitios web en PHP, Slim y MySQL</li>
+          <li>Repositorios y versiones en GitHub</li>
         </ul>
       </div>
       <div class="team-card reveal">
@@ -84,6 +84,6 @@
   <div class="wrap reveal" style="text-align:center;">
     <span class="eyebrow">Proyecto institucional</span>
     <h2 style="margin-top:14px;font-size:28px;">E.E.S.T. N°4 de Berazategui y Fundación YPF</h2>
-    <p style="max-width:560px;margin:14px auto 0;">Voltec Ergon nace como proyecto técnico final, con acompañamiento institucional para llevar Eco Smart Grid de prototipo a auditoría real.</p>
+    <p style="max-width:560px;margin:14px auto 0;">Voltec Ergon nace como proyecto técnico final de séptimo año. Eco Smart Grid es su primer trabajo para un cliente.</p>
   </div>
 </section>

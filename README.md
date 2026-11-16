@@ -30,9 +30,9 @@ Proyecto institucional **E.E.S.T N°4 de Berazategui y Fundacion YPF**.
 | Servicio | Descripción |
 |---|---|
 | Auditoría energética | Relevamiento de consumo por artefacto, detección de consumo vampiro |
-| Instalación y monitoreo IoT | Módulos Eco Smart Grid (ESP32 + PZEM-004T) |
-| Desarrollo de software | Apps y dashboards a medida (Energhost en Flutter) |
-| Consultoría en sustentabilidad | Cálculo de huella de carbono y recomendaciones |
+| Electrónica e IoT | Prototipos con ESP32, sensores y relés, con carcasa impresa en 3D |
+| Desarrollo web a medida | Sitios, catálogos y sistemas de gestión (PHP, Slim, MySQL) |
+| Soporte y mantenimiento | Registro, corrección e informe de cada falla |
 
 ## Requisitos
 

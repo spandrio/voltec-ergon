@@ -13,7 +13,7 @@ $navItems = [
   '/contacto' => 'Contacto',
 ];
 $pageTitle = $title ?? 'Voltec Ergon';
-$pageDescription = $description ?? 'Voltec Ergon: consultora técnica de energía IoT. Auditoría energética, instalación y monitoreo con Eco Smart Grid, y desarrollo de software a medida.';
+$pageDescription = $description ?? 'Voltec Ergon: consultora de tecnología. Desarrollo web a medida, electrónica e IoT, auditoría energética y soporte.';
 $canonicalUrl = $canonicalUrl ?? null;
 $ogImage = $ogImage ?? null;
 ?>
@@ -420,6 +420,67 @@ footer{padding:56px 0 30px;}
   .case-card{padding:26px;}
 }
 
+
+/* ---------- HERO OSCURO ---------- */
+.hero-dark{background:linear-gradient(135deg,#061B42 0%,#0A2E6B 52%,#0B4FB3 100%);color:#fff;padding:88px 0 80px;position:relative;overflow:hidden;}
+.hero-dark::before{content:"";position:absolute;right:-140px;top:-160px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(15,184,138,.22),transparent 68%);pointer-events:none;}
+.hero-dark::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),transparent 85%);pointer-events:none;}
+.hero-dark .wrap{position:relative;z-index:1;}
+.hero-dark .eyebrow{color:var(--amber-alert);}
+.hero-dark h1{color:#fff;font-size:50px;line-height:1.07;margin:18px 0 20px;text-wrap:balance;}
+.hero-dark h1 em{font-style:normal;color:#6FE0C2;}
+.hero-dark .lead{color:#CBD9F2;font-size:17.5px;max-width:540px;margin-bottom:30px;}
+.btn-light{background:#fff;color:var(--navy-deep);}
+.btn-light:hover{background:var(--amber-alert);transform:translateY(-1px);}
+.btn-outline{border-color:rgba(255,255,255,.42);color:#fff;}
+.btn-outline:hover{background:rgba(255,255,255,.1);}
+.hero-points{list-style:none;display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:#B4C8EC;}
+.hero-points li{display:flex;align-items:center;gap:8px;}
+.hero-points li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green-energy);}
+.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:30px;backdrop-filter:blur(8px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);}
+.hc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+.hc-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#B4C8EC;}
+.pill{font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(255,199,44,.16);color:var(--amber-alert);border:1px solid rgba(255,199,44,.35);}
+.hero-card h3{color:#fff;font-size:27px;margin-bottom:6px;}
+.hero-card p{color:#CBD9F2;font-size:14.5px;margin-bottom:18px;}
+.stages{list-style:none;counter-reset:st;display:flex;flex-direction:column;}
+.stages li{counter-increment:st;display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.12);font-size:14.5px;color:#E7EEFB;}
+.stages li::before{content:counter(st);width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11.5px;flex-shrink:0;}
+.stages li.done::before{background:var(--green-energy);border-color:var(--green-energy);color:#06223F;font-weight:700;}
+.stages li span{flex:1;}
+.stages li b{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--amber-alert);text-transform:uppercase;letter-spacing:.05em;}
+.stages li.done b{color:#6FE0C2;}
+.hc-link{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:12.5px;font-weight:600;color:#fff;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;}
+.hc-link:hover{border-color:#fff;}
+a.service-card{display:block;}
+.service-card .ico svg{display:block;}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.service-detail{scroll-margin-top:96px;}
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:start;}
+.two-col.center{grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+@media(max-width:900px){.detail-grid,.two-col,.two-col.center{grid-template-columns:1fr;}}
+.bill{border:1px solid var(--line);border-radius:14px;padding:12px 26px;background:var(--bg-white);}
+.bill>div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14.5px;}
+.bill>div:last-child{border-bottom:none;}
+.bill-tag{font-family:var(--mono);font-size:11px;color:#B0392E;background:#FBE6E3;padding:3px 8px;border-radius:5px;}
+.fine{font-size:12px;color:var(--ink-soft);margin-top:10px;}
+.prob-list{display:flex;flex-direction:column;gap:24px;}
+.prob-list>div{display:flex;gap:16px;}
+.prob-list b{width:42px;height:42px;flex-shrink:0;border-radius:10px;background:rgba(0,87,214,.08);color:var(--blue-brand);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:600;}
+.prob-list h4{font-family:var(--display);font-size:16.5px;color:var(--navy-deep);margin-bottom:4px;}
+.prob-list p{font-size:14.5px;color:var(--ink-soft);}
+.process-grid.cols-5{grid-template-columns:repeat(5,1fr);}
+@media(max-width:1000px){.process-grid.cols-5{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.process-grid.cols-5{grid-template-columns:1fr;}}
+.process-step.next .n{border-style:dashed;border-color:#B7791F;color:#B7791F;}
+.process-step.next h4{color:#8A5A12;}
+.spec-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;}
+.spec{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--bg-white);}
+.spec .k{font-family:var(--mono);font-size:11px;color:var(--blue-brand);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+.spec .v{font-size:14px;font-weight:500;}
+.calc-note{font-size:12px;color:#9FB6E0;margin-top:14px;}
+@media(max-width:600px){.hero-dark{padding:60px 0 56px;}.hero-dark h1{font-size:34px;}}
+
 /* ---------- SCROLL REVEAL ---------- */
 .reveal,.reveal-left{opacity:0;transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
 .reveal{transform:translateY(26px);}
@@ -453,7 +514,7 @@ footer{padding:56px 0 30px;}
     <a href="/" style="text-decoration:none;">
       <div class="brand">
         <div class="mark"></div>
-        <div>VOLTEC ERGON<small>Consultora de energía IoT</small></div>
+        <div>VOLTEC ERGON<small>Consultora de tecnología</small></div>
       </div>
     </a>
     <nav class="nav-links">
@@ -462,7 +523,7 @@ footer{padding:56px 0 30px;}
       <?php endforeach; ?>
     </nav>
     <div class="nav-cta">
-      <a href="/contacto" class="btn btn-primary">Solicitar auditoría</a>
+      <a href="/contacto" class="btn btn-primary">Pedir presupuesto</a>
     </div>
   </div>
 </header>
@@ -475,9 +536,9 @@ footer{padding:56px 0 30px;}
       <div>
         <div class="brand" style="margin-bottom:14px;">
           <div class="mark"></div>
-          <div>VOLTEC ERGON<small>Consultora de energía IoT</small></div>
+          <div>VOLTEC ERGON<small>Consultora de tecnología</small></div>
         </div>
-        <p style="font-size:13.5px;color:var(--ink-soft);max-width:280px;">Diagnóstico, instalación y monitoreo del consumo energético residencial e institucional.</p>
+        <p style="font-size:13.5px;color:var(--ink-soft);max-width:280px;">Desarrollo web, electrónica e IoT, auditoría energética y soporte para hogares, instituciones y comercios.</p>
       </div>
       <div>
         <h5>Consultora</h5>
@@ -487,10 +548,11 @@ footer{padding:56px 0 30px;}
         <a href="/contacto">Contacto</a>
       </div>
       <div>
-        <h5>Producto</h5>
-        <a href="/trabajos">Eco Smart Grid</a>
-        <a href="/trabajos">App Energhost</a>
-        <a href="/servicios">Huella de carbono</a>
+        <h5>Servicios</h5>
+        <a href="/servicios#web">Desarrollo web</a>
+        <a href="/servicios#iot">Electrónica e IoT</a>
+        <a href="/servicios#auditoria">Auditoría energética</a>
+        <a href="/servicios#soporte">Soporte</a>
       </div>
       <div>
         <h5>Institucional</h5>
@@ -503,7 +565,7 @@ footer{padding:56px 0 30px;}
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Voltec Ergon. Proyecto técnico — Eco Smart Grid / Energhost.</span>
+      <span>© 2026 Voltec Ergon. Proyecto institucional de la E.E.S.T. N°4 de Berazategui.</span>
       <span style="display:flex;gap:18px;">
         <a href="/privacidad">Política de Privacidad</a>
         <a href="/terminos">Términos y Condiciones</a>

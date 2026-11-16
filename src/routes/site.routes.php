@@ -29,8 +29,8 @@ function validarContacto(array $data): array
 $app->get("/", function (ServerRequestInterface $request, $response) use ($renderer) {
   return view($renderer, $response, "site/home.php", [
     "active" => "/",
-    "title" => "Voltec Ergon — Consultora de energía IoT",
-    "description" => "Auditoría energética, instalación y monitoreo IoT con Eco Smart Grid, y desarrollo de software a medida. Consultora técnica de la E.E.S.T N°4 de Berazategui.",
+    "title" => "Voltec Ergon — Consultora de tecnología",
+    "description" => "Desarrollo web a medida, electrónica e IoT, auditoría energética y soporte. Consultora de tecnología de la E.E.S.T N°4 de Berazategui.",
     "canonicalUrl" => baseUrl($request) . "/",
   ], "layouts/site.php");
 });
@@ -39,7 +39,7 @@ $app->get("/servicios", function (ServerRequestInterface $request, $response) us
   return view($renderer, $response, "site/servicios.php", [
     "active" => "/servicios",
     "title" => "Servicios — Voltec Ergon",
-    "description" => "Auditoría energética, instalación y monitoreo IoT, desarrollo de software y consultoría en sustentabilidad. Conocé los servicios de Voltec Ergon.",
+    "description" => "Desarrollo web a medida, electrónica e IoT, auditoría energética y soporte. Conocé los servicios de Voltec Ergon.",
     "canonicalUrl" => baseUrl($request) . "/servicios",
   ], "layouts/site.php");
 });
@@ -57,7 +57,7 @@ $app->get("/trabajos", function (ServerRequestInterface $request, $response) use
   return view($renderer, $response, "site/trabajos.php", [
     "active" => "/trabajos",
     "title" => "Eco Smart Grid — Voltec Ergon",
-    "description" => "Eco Smart Grid + App Energhost: sistema IoT modular que mide el consumo eléctrico en tiempo real, detecta consumo vampiro y calcula tu huella de carbono.",
+    "description" => "Eco Smart Grid: un medidor de consumo eléctrico por artefacto con corte por relé, hecho por Voltec Ergon para la E.E.S.T N°4 de Berazategui.",
     "canonicalUrl" => baseUrl($request) . "/trabajos",
   ], "layouts/site.php");
 });
@@ -66,7 +66,7 @@ $app->get("/contacto", function (ServerRequestInterface $request, $response) use
   return view($renderer, $response, "site/contacto.php", [
     "active" => "/contacto",
     "title" => "Contacto — Voltec Ergon",
-    "description" => "Solicitá una auditoría energética con Voltec Ergon y empezá a monitorear el consumo eléctrico de tu hogar o institución.",
+    "description" => "Pedí un presupuesto a Voltec Ergon: desarrollo web, electrónica e IoT, auditoría energética y soporte.",
     "canonicalUrl" => baseUrl($request) . "/contacto",
   ], "layouts/site.php");
 });
