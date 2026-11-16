@@ -561,7 +561,7 @@ a.service-card{display:block;}
       </div>
       <div>
         <h5>Proyecto técnico</h5>
-        <a href="https://github.com/spandrio/voltec">Repositorio Eco Smart Grid</a>
+        <a href="https://github.com/spandrio/voltec">Repositorio Voltec</a>
       </div>
     </div>
     <div class="footer-bottom">

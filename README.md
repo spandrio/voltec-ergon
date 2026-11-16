@@ -1,7 +1,7 @@
 # Voltec Ergon
 
 **Descripción:**
-Voltec Ergon es una consultora de tecnología: desarrollo web a medida, electrónica e IoT, auditoría energética y soporte. Su proyecto para el cliente **YPF** es **Eco Smart Grid**, un medidor de consumo eléctrico por artefacto. Este repositorio es el sitio institucional de la consultora.
+Voltec Ergon es una consultora de tecnología: desarrollo web a medida, electrónica e IoT, auditoría energética y soporte. Su proyecto para el cliente **YPF** es **Voltec**, un medidor de consumo eléctrico por artefacto montado en la caja **Eco Smart Grid**. Este repositorio es el sitio institucional de la consultora.
 
 > El proyecto técnico en sí — hardware, firmware y catálogo de módulos — vive en un repositorio aparte: [voltec](https://github.com/spandrio/voltec).
 

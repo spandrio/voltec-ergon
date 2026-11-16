@@ -33,8 +33,8 @@ $svg = fn(string $k) => '<svg viewBox="0 0 24 24" width="26" height="26" fill="n
         <span class="hc-label">Proyecto en curso</span>
         <span class="pill">Cliente: YPF</span>
       </div>
-      <h3>Eco Smart Grid</h3>
-      <p>Medidor de consumo eléctrico para tres artefactos, con corte por relé.</p>
+      <h3>Voltec</h3>
+      <p>Medidor de consumo eléctrico para tres artefactos, con corte por relé, en la caja Eco Smart Grid.</p>
       <ol class="stages">
         <li class="done"><span>Relevamiento y presupuesto</span><b>Hecho</b></li>
         <li class="done"><span>Diseño del circuito y la caja</span><b>Hecho</b></li>
@@ -122,8 +122,8 @@ $svg = fn(string $k) => '<svg viewBox="0 0 24 24" width="26" height="26" fill="n
     <div class="case-card reveal">
       <div>
         <div class="tags"><span>Electrónica</span><span>ESP32</span><span>PZEM-004T</span><span>Impresión 3D</span></div>
-        <h3>Eco Smart Grid</h3>
-        <p>Un prototipo que mide voltaje, corriente y potencia de tres artefactos, muestra los valores en una pantalla y permite cortar cada uno con un relé.</p>
+        <h3>Voltec</h3>
+        <p>Un prototipo en la caja Eco Smart Grid que mide voltaje, corriente y potencia de tres artefactos, muestra los valores en una pantalla y permite cortar cada uno con un relé.</p>
         <a href="/trabajos" class="btn btn-ghost">Ver caso completo →</a>
         <div class="case-stats">
           <div><div class="num">3</div><div class="lbl">Artefactos medidos</div></div>

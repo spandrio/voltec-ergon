@@ -18,7 +18,7 @@
 
       <div>
         <h3 style="font-size:18px;color:var(--navy-deep);margin-bottom:8px;">1. Sobre este sitio</h3>
-        <p>Este sitio presenta a Voltec Ergon, la consultora técnica de un proyecto institucional de la E.E.S.T N°4 de Berazategui y Fundación YPF. Su contenido es informativo: describe nuestros servicios, el equipo, y el sistema Eco Smart Grid + Energhost desarrollado como caso de portafolio.</p>
+        <p>Este sitio presenta a Voltec Ergon, la consultora técnica de un proyecto institucional de la E.E.S.T N°4 de Berazategui y Fundación YPF. Su contenido es informativo: describe nuestros servicios, el equipo, y el sistema Voltec (con su caja Eco Smart Grid y la app Energhost) desarrollado como caso de portafolio.</p>
       </div>
 
       <div>
@@ -28,7 +28,7 @@
 
       <div>
         <h3 style="font-size:18px;color:var(--navy-deep);margin-bottom:8px;">3. Propiedad del contenido</h3>
-        <p>Los textos, diseño y datos técnicos del sistema Eco Smart Grid pertenecen al equipo de Voltec Ergon como parte de su proyecto técnico. El código fuente del proyecto Eco Smart Grid está disponible bajo licencia MIT en su <a href="https://github.com/spandrio/voltec" style="color:var(--blue-brand);">repositorio público</a>.</p>
+        <p>Los textos, diseño y datos técnicos del sistema Voltec pertenecen al equipo de Voltec Ergon como parte de su proyecto técnico. El código fuente del proyecto Voltec está disponible bajo licencia MIT en su <a href="https://github.com/spandrio/voltec" style="color:var(--blue-brand);">repositorio público</a>.</p>
       </div>
 
       <div>

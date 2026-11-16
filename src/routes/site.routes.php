@@ -56,8 +56,8 @@ $app->get("/equipo", function (ServerRequestInterface $request, $response) use (
 $app->get("/trabajos", function (ServerRequestInterface $request, $response) use ($renderer) {
   return view($renderer, $response, "site/trabajos.php", [
     "active" => "/trabajos",
-    "title" => "Eco Smart Grid — Voltec Ergon",
-    "description" => "Eco Smart Grid: un medidor de consumo eléctrico por artefacto con corte por relé, hecho por Voltec Ergon para la E.E.S.T N°4 de Berazategui.",
+    "title" => "Voltec, cliente YPF — Voltec Ergon",
+    "description" => "Voltec: un medidor de consumo eléctrico por artefacto con corte por relé, en la caja Eco Smart Grid, hecho por Voltec Ergon para YPF.",
     "canonicalUrl" => baseUrl($request) . "/trabajos",
   ], "layouts/site.php");
 });

@@ -29,7 +29,7 @@ $old = $old ?? [];
       </div>
       <div class="contact-card reveal-left" style="transition-delay:.18s;">
         <div class="ico">→</div>
-        <div><h5>Proyecto técnico</h5><a href="https://github.com/spandrio/voltec">Ver repositorio de Eco Smart Grid</a></div>
+        <div><h5>Proyecto técnico</h5><a href="https://github.com/spandrio/voltec">Ver repositorio de Voltec</a></div>
       </div>
     </div>
 
