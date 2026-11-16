@@ -1,7 +1,7 @@
 <?php
 /**
  * views/layouts/site.php
- * Layout compartido por las páginas públicas de la consultora (home, servicios, equipo, trabajos, contacto).
+ * Layout compartido por las páginas públicas de la consultora (home, servicios, equipo, clientes, contacto).
  * Variables disponibles: $content (html ya renderizado de la vista), $active (string, ruta activa para resaltar el nav).
  */
 $active = $active ?? '';
@@ -9,7 +9,7 @@ $navItems = [
   '/' => 'Inicio',
   '/servicios' => 'Servicios',
   '/equipo' => 'Equipo',
-  '/trabajos' => 'Trabajos',
+  '/clientes' => 'Clientes',
   '/contacto' => 'Contacto',
 ];
 $pageTitle = $title ?? 'Voltec Ergon';
@@ -481,6 +481,108 @@ a.service-card{display:block;}
 .calc-note{font-size:12px;color:#9FB6E0;margin-top:14px;}
 @media(max-width:600px){.hero-dark{padding:60px 0 56px;}.hero-dark h1{font-size:34px;}}
 
+/* ---------- INICIO: panel "que necesitas" ---------- */
+.pill.green{background:rgba(15,184,138,.16);color:#6FE0C2;border-color:rgba(15,184,138,.4);}
+.need-card{padding:26px;}
+.need{display:flex;align-items:center;gap:14px;padding:14px 12px;margin:0 -12px;border-radius:12px;border-top:1px solid rgba(255,255,255,.1);color:#fff;transition:background .2s ease,transform .2s ease;}
+.need:first-of-type{border-top:none;}
+.need:hover{background:rgba(255,255,255,.09);transform:translateX(3px);}
+.need .ni{width:40px;height:40px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(111,224,194,.14);color:#6FE0C2;}
+.need>span:nth-child(2){flex:1;display:flex;flex-direction:column;}
+.need b{font-family:var(--display);font-size:16px;font-weight:600;}
+.need small{font-size:13px;color:#B4C8EC;}
+.need i{font-style:normal;color:#6FE0C2;font-family:var(--mono);opacity:.7;transition:opacity .2s ease;}
+.need:hover i{opacity:1;}
+.hero-card p.need-foot{margin:14px 0 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font-size:13.5px;}
+.need-foot a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4);}
+
+/* ---------- franja de tecnologias ---------- */
+.tech-strip{background:#061B42;border-top:1px solid rgba(255,255,255,.08);overflow:hidden;padding:16px 0;position:relative;}
+.tech-strip::before,.tech-strip::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:1;pointer-events:none;}
+.tech-strip::before{left:0;background:linear-gradient(90deg,#061B42,transparent);}
+.tech-strip::after{right:0;background:linear-gradient(-90deg,#061B42,transparent);}
+.tech-track{display:flex;gap:14px;width:max-content;animation:marquee 38s linear infinite;}
+.tech-track span{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:#B4C8EC;padding:7px 14px;border:1px solid rgba(255,255,255,.14);border-radius:30px;white-space:nowrap;}
+.tech-strip:hover .tech-track{animation-play-state:paused;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ---------- por que elegirnos ---------- */
+.why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr;gap:34px;}}
+.why-list{display:flex;flex-direction:column;gap:16px;}
+.why{display:flex;gap:18px;background:var(--bg-white);border:1px solid var(--line);border-radius:16px;padding:22px 24px;transition:.25s ease;}
+.why:hover{border-color:var(--blue-brand);transform:translateY(-3px);box-shadow:0 18px 34px -24px rgba(0,87,214,.45);}
+.why b{font-family:var(--display);font-size:30px;line-height:1;font-weight:700;flex-shrink:0;
+  background:linear-gradient(135deg,var(--blue-brand),var(--green-energy));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.why h4{font-size:17px;margin-bottom:5px;}
+.why p{font-size:14.5px;color:var(--ink-soft);}
+.why-list .reveal:nth-child(2){transition-delay:.08s;}
+.why-list .reveal:nth-child(3){transition-delay:.16s;}
+
+/* ---------- pasos unidos por una linea ---------- */
+.process-grid.linked{position:relative;}
+.process-grid.linked::before{content:"";position:absolute;top:17px;left:17px;right:calc(25% - 17px);height:2px;
+  background:linear-gradient(90deg,var(--blue-brand),var(--green-energy));opacity:.35;}
+.process-grid.linked .process-step{position:relative;}
+@media(max-width:900px){.process-grid.linked::before{display:none;}}
+
+/* ---------- clientes ---------- */
+.client-row{display:grid;grid-template-columns:1.6fr 1fr;gap:22px;}
+.client-row.three{grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.client-row,.client-row.three{grid-template-columns:1fr;}}
+.client-card{display:flex;flex-direction:column;border-radius:18px;padding:30px;border:1px solid var(--line);background:var(--bg-white);transition:.25s ease;}
+.client-card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -30px rgba(0,87,214,.5);}
+.client-card h3{font-size:24px;margin:16px 0 8px;}
+.client-card p{color:var(--ink-soft);font-size:15px;margin-bottom:18px;}
+.client-card .link{margin-top:auto;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--blue-brand);}
+.client-card.featured{background:linear-gradient(140deg,#061B42,#0A2E6B 55%,#0B4FB3);border-color:transparent;color:#fff;position:relative;overflow:hidden;}
+.client-card.featured::after{content:"";position:absolute;right:-90px;bottom:-110px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(15,184,138,.28),transparent 70%);pointer-events:none;}
+.client-card.featured h3{color:#fff;}
+.client-card.featured p{color:#CBD9F2;}
+.client-card.featured .link{color:#6FE0C2;}
+.client-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.client-logo{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:24px;
+  background:linear-gradient(135deg,var(--green-energy),var(--blue-bright));color:#fff;box-shadow:0 10px 24px -10px rgba(15,184,138,.7);}
+.badge{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:20px;background:rgba(255,199,44,.16);color:var(--amber-alert);border:1px solid rgba(255,199,44,.4);}
+.client-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;}
+.client-tags span{font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.1);color:#E7EEFB;}
+.client-card.next{border:1.5px dashed #B9C7DD;background:transparent;}
+.client-card.next:hover{border-color:var(--blue-brand);background:var(--bg-white);}
+.client-card.next .plus{width:48px;height:48px;border-radius:12px;border:1.5px dashed #9FB2D1;display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--blue-brand);}
+.client-row .reveal:nth-child(2){transition-delay:.08s;}
+.client-row .reveal:nth-child(3){transition-delay:.16s;}
+.client-feature{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;border:1px solid var(--line);border-radius:22px;padding:40px;background:linear-gradient(180deg,#fff,#F7FAFE);box-shadow:0 30px 60px -44px rgba(10,46,107,.5);}
+@media(max-width:900px){.client-feature{grid-template-columns:1fr;padding:26px;}}
+.client-feature .badge{background:rgba(183,121,31,.1);color:#8A5A12;border-color:rgba(183,121,31,.35);}
+.client-feature h2{font-size:38px;margin:16px 0 10px;}
+.cf-lead{color:var(--ink-soft);font-size:16px;margin-bottom:22px;}
+.cf-facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:26px;}
+@media(max-width:600px){.cf-facts{grid-template-columns:1fr;}}
+.cf-facts div{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#fff;}
+.cf-facts dt{font-family:var(--mono);font-size:11px;color:var(--blue-brand);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;}
+.cf-facts dd{font-size:14px;font-weight:500;}
+.cf-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.back-link{display:block;width:max-content;font-family:var(--mono);font-size:12.5px;color:var(--blue-brand);margin-bottom:18px;}
+.back-link:hover{text-decoration:underline;}
+
+/* ---------- menu en celular ---------- */
+.mnav{display:none;position:relative;}
+.mnav summary{list-style:none;cursor:pointer;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;}
+.mnav summary::-webkit-details-marker{display:none;}
+.mnav summary span,.mnav summary span::before,.mnav summary span::after{display:block;width:18px;height:2px;background:var(--navy-deep);border-radius:2px;position:relative;transition:.2s ease;}
+.mnav summary span::before,.mnav summary span::after{content:"";position:absolute;left:0;}
+.mnav summary span::before{top:-6px;}
+.mnav summary span::after{top:6px;}
+.mnav[open] summary span{background:transparent;}
+.mnav[open] summary span::before{top:0;transform:rotate(45deg);}
+.mnav[open] summary span::after{top:0;transform:rotate(-45deg);}
+.mnav-panel{position:absolute;right:0;top:52px;width:230px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;box-shadow:0 24px 50px -24px rgba(10,46,107,.45);display:flex;flex-direction:column;z-index:60;}
+.mnav-panel a{padding:11px 12px;border-radius:9px;font-size:15px;color:var(--ink);}
+.mnav-panel a:hover,.mnav-panel a.active{background:var(--bg-light);color:var(--blue-brand);}
+@media(max-width:940px){.mnav{display:block;}}
+@media(max-width:520px){.nav-cta .btn{display:none;}}
+@media(prefers-reduced-motion:reduce){.tech-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center;}}
+
 /* ---------- SCROLL REVEAL ---------- */
 .reveal,.reveal-left{opacity:0;transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
 .reveal{transform:translateY(26px);}
@@ -524,6 +626,14 @@ a.service-card{display:block;}
     </nav>
     <div class="nav-cta">
       <a href="/contacto" class="btn btn-primary">Pedir presupuesto</a>
+      <details class="mnav">
+        <summary aria-label="Abrir menú"><span></span></summary>
+        <nav class="mnav-panel" aria-label="Menú">
+          <?php foreach ($navItems as $href => $label): ?>
+            <a href="<?= html($href) ?>" class="<?= $active === $href ? 'active' : '' ?>"><?= html($label) ?></a>
+          <?php endforeach; ?>
+        </nav>
+      </details>
     </div>
   </div>
 </header>
@@ -544,7 +654,7 @@ a.service-card{display:block;}
         <h5>Consultora</h5>
         <a href="/servicios">Servicios</a>
         <a href="/equipo">Equipo</a>
-        <a href="/trabajos">Trabajos</a>
+        <a href="/clientes">Clientes</a>
         <a href="/contacto">Contacto</a>
       </div>
       <div>

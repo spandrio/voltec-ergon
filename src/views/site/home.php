@@ -2,6 +2,7 @@
 /**
  * views/site/home.php
  * Renderizado por PhpRenderer en GET / dentro de layouts/site.php.
+ * El inicio presenta a la consultora; los clientes tienen su propio apartado en /clientes.
  */
 $ico = [
   "web" => '<path d="M3 5h18v12H3z"/><path d="M8 21h8M12 17v4M7 9l2 2-2 2M12 13h4"/>',
@@ -9,7 +10,8 @@ $ico = [
   "aud" => '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M15 6l2 2 4-4"/>',
   "sop" => '<path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2M17 3h4v4M21 3l-5 5"/>',
 ];
-$svg = fn(string $k) => '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . $ico[$k] . '</svg>';
+$svg = fn(string $k, int $s = 26) => '<svg viewBox="0 0 24 24" width="' . $s . '" height="' . $s . '" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . $ico[$k] . '</svg>';
+$tecnologias = ["PHP", "Slim", "MySQL", "HTML y CSS", "JavaScript", "ESP32", "Arduino (C++)", "Sensores PZEM-004T", "Relés", "Diseño CAD", "Impresión 3D", "Flutter", "Git y GitHub"];
 ?>
 <section class="hero-dark">
   <div class="wrap hero-grid">
@@ -23,28 +25,32 @@ $svg = fn(string $k) => '<svg viewBox="0 0 24 24" width="26" height="26" fill="n
       </div>
       <ul class="hero-points">
         <li>4 servicios</li>
-        <li>3 comisiones técnicas</li>
-        <li>Proyecto institucional E.E.S.T. N°4</li>
+        <li>Software y hardware en un mismo equipo</li>
+        <li>Presupuesto por escrito</li>
       </ul>
     </div>
 
-    <aside class="hero-card" aria-label="Proyecto en curso">
+    <aside class="hero-card need-card" aria-label="Elegí qué necesitás resolver">
       <div class="hc-top">
-        <span class="hc-label">Proyecto en curso</span>
-        <span class="pill">Cliente: YPF</span>
+        <span class="hc-label">¿Qué necesitás resolver?</span>
+        <span class="pill green">Elegí un servicio</span>
       </div>
-      <h3>Voltec</h3>
-      <p>Medidor de consumo eléctrico para tres artefactos, con corte por relé, en la caja Eco Smart Grid.</p>
-      <ol class="stages">
-        <li class="done"><span>Relevamiento y presupuesto</span><b>Hecho</b></li>
-        <li class="done"><span>Diseño del circuito y la caja</span><b>Hecho</b></li>
-        <li class="done"><span>Prototipo con pantalla y relés</span><b>Hecho</b></li>
-        <li><span>Conexión a la nube y app</span><b>En diseño</b></li>
-      </ol>
-      <a href="/trabajos" class="hc-link">Ver el caso completo →</a>
+      <a class="need" href="/servicios#web"><span class="ni"><?= $svg("web", 20) ?></span><span><b>Un sitio o sistema web</b><small>Institucional, catálogo o gestión con usuarios</small></span><i>→</i></a>
+      <a class="need" href="/servicios#iot"><span class="ni"><?= $svg("iot", 20) ?></span><span><b>Medir o controlar algo</b><small>Prototipos con sensores, relés y su carcasa 3D</small></span><i>→</i></a>
+      <a class="need" href="/servicios#auditoria"><span class="ni"><?= $svg("aud", 20) ?></span><span><b>Saber cuánto consumo</b><small>Auditoría por artefacto con costo y CO₂</small></span><i>→</i></a>
+      <a class="need" href="/servicios#soporte"><span class="ni"><?= $svg("sop", 20) ?></span><span><b>Que algo vuelva a funcionar</b><small>Soporte y mantenimiento con informe</small></span><i>→</i></a>
+      <p class="need-foot">¿No sabés cuál es? <a href="/contacto">Contanos el problema</a> y te orientamos.</p>
     </aside>
   </div>
 </section>
+
+<div class="tech-strip" aria-label="Tecnologías con las que trabajamos">
+  <div class="tech-track">
+    <?php foreach ([...$tecnologias, ...$tecnologias] as $i => $t): ?>
+      <span<?= $i >= count($tecnologias) ? ' aria-hidden="true"' : '' ?>><?= html($t) ?></span>
+    <?php endforeach; ?>
+  </div>
+</div>
 
 <section class="bg-white">
   <div class="wrap">
@@ -83,12 +89,27 @@ $svg = fn(string $k) => '<svg viewBox="0 0 24 24" width="26" height="26" fill="n
 </section>
 
 <section>
+  <div class="wrap why-grid">
+    <div class="section-head reveal" style="margin-bottom:0;">
+      <span class="eyebrow">Por qué elegirnos</span>
+      <h2>Una consultora chica, con todo el proyecto en las mismas manos</h2>
+      <p>No tercerizamos partes: el mismo equipo releva, diseña, construye y da soporte.</p>
+    </div>
+    <div class="why-list">
+      <div class="why reveal"><b>01</b><div><h4>Software y hardware juntos</h4><p>Si tu solución necesita una placa, un sensor y una página web, lo resolvemos todo sin intermediarios.</p></div></div>
+      <div class="why reveal"><b>02</b><div><h4>Presupuesto antes de empezar</h4><p>Relevamos el caso y te pasamos un presupuesto por escrito. Nada se construye sin que lo apruebes.</p></div></div>
+      <div class="why reveal"><b>03</b><div><h4>Entregado probado y documentado</h4><p>Cada entrega se prueba con vos y lleva su manual. Después seguimos disponibles para las fallas.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Cómo trabajamos</span>
       <h2>El mismo recorrido en todos los proyectos</h2>
     </div>
-    <div class="process-grid">
+    <div class="process-grid linked">
       <div class="process-step reveal">
         <div class="n">1</div>
         <h4>Solicitud y presupuesto</h4>
@@ -113,41 +134,40 @@ $svg = fn(string $k) => '<svg viewBox="0 0 24 24" width="26" height="26" fill="n
   </div>
 </section>
 
-<section class="bg-white">
+<section>
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom:34px;">
-      <span class="eyebrow">Trabajos</span>
-      <h2>Un proyecto hecho para un cliente</h2>
+      <span class="eyebrow">Clientes</span>
+      <h2>Organizaciones que confiaron en nosotros</h2>
+      <p>Cada cliente tiene su propio caso en el apartado de clientes.</p>
     </div>
-    <div class="case-card reveal">
-      <div>
-        <div class="tags"><span>Electrónica</span><span>ESP32</span><span>PZEM-004T</span><span>Impresión 3D</span></div>
-        <h3>Voltec</h3>
-        <p>Un prototipo en la caja Eco Smart Grid que mide voltaje, corriente y potencia de tres artefactos, muestra los valores en una pantalla y permite cortar cada uno con un relé.</p>
-        <a href="/trabajos" class="btn btn-ghost">Ver caso completo →</a>
-        <div class="case-stats">
-          <div><div class="num">3</div><div class="lbl">Artefactos medidos</div></div>
-          <div><div class="num">0.325</div><div class="lbl">kg CO₂ por kWh (factor AR)</div></div>
+    <div class="client-row">
+      <a class="client-card featured reveal" href="/clientes/voltec">
+        <div class="client-top">
+          <span class="client-logo" aria-hidden="true">V</span>
+          <span class="badge">Nuestro cliente más grande</span>
         </div>
-      </div>
-      <div class="device-visual">
-        <div class="ring r1"></div>
-        <div class="ring r2"></div>
-        <div class="core"><span>ESP32</span></div>
-        <div class="float-tag t1">PZEM-004T</div>
-        <div class="float-tag t2">Relé 220V</div>
-        <div class="float-tag t3">Pantalla TFT</div>
-      </div>
+        <h3>Voltec</h3>
+        <p>Diseñamos y armamos para Voltec un medidor de consumo eléctrico por artefacto, con corte por relé, dentro de la caja Eco Smart Grid.</p>
+        <div class="client-tags"><span>Electrónica e IoT</span><span>Desarrollo web</span><span>Diseño 3D</span></div>
+        <span class="link">Ver el caso de Voltec →</span>
+      </a>
+      <a class="client-card next reveal" href="/contacto">
+        <span class="plus" aria-hidden="true">+</span>
+        <h3>Tu organización</h3>
+        <p>¿Tenés un problema que se resuelve con tecnología? Puede ser nuestro próximo caso.</p>
+        <span class="link">Contanos tu proyecto →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<section id="contacto">
+<section id="contacto" class="bg-white">
   <div class="cta-band">
     <div>
       <h2>¿Tenés un proyecto o un problema para resolver?</h2>
       <p>Contanos qué necesitás y te respondemos con una propuesta.</p>
     </div>
-    <a href="/contacto" class="btn btn-primary">Pedir un presupuesto</a>
+    <a href="/contacto" class="btn btn-light">Pedir un presupuesto</a>
   </div>
 </section>

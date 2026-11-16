@@ -84,6 +84,6 @@
   <div class="wrap reveal" style="text-align:center;">
     <span class="eyebrow">Proyecto institucional</span>
     <h2 style="margin-top:14px;font-size:28px;">E.E.S.T. N°4 de Berazategui y Fundación YPF</h2>
-    <p style="max-width:560px;margin:14px auto 0;">Voltec Ergon nace como proyecto técnico final de séptimo año. Voltec, hecho para YPF, es su primer trabajo para un cliente.</p>
+    <p style="max-width:560px;margin:14px auto 0;">Voltec Ergon nace como proyecto técnico final de séptimo año. Voltec es su primer cliente y el más grande hasta el momento.</p>
   </div>
 </section>

@@ -1,14 +1,15 @@
 <?php
 /**
- * views/site/trabajos.php
- * Renderizado por PhpRenderer en GET /trabajos dentro de layouts/site.php.
+ * views/site/cliente-voltec.php
+ * Renderizado por PhpRenderer en GET /clientes/voltec dentro de layouts/site.php.
  */
 ?>
 <section class="page-header">
   <div class="wrap reveal">
-    <span class="eyebrow">Trabajos · Caso de un cliente</span>
+    <a href="/clientes" class="back-link">← Todos los clientes</a>
+    <span class="eyebrow">Clientes · Caso Voltec</span>
     <h1>Voltec</h1>
-    <p class="lead">Un medidor de consumo eléctrico por artefacto, montado en la caja Eco Smart Grid, hecho para YPF en la convocatoria de Fundación YPF, desarrollado desde la E.E.S.T. N°4 de Berazategui.</p>
+    <p class="lead">Nuestro cliente más grande hasta el momento. Para Voltec hicimos un medidor de consumo eléctrico por artefacto, montado en la caja Eco Smart Grid, presentado en la convocatoria de Fundación YPF.</p>
   </div>
 </section>
 
@@ -61,7 +62,7 @@
       <div class="core"><span>ESP32</span></div>
       <div class="float-tag t1">PZEM-004T</div>
       <div class="float-tag t2">Relé 220V</div>
-      <div class="float-tag t3">Pantalla TFT</div>
+      <div class="float-tag t3">Caja Eco Smart Grid</div>
     </div>
     <div class="reveal">
       <span class="eyebrow">Componentes</span>

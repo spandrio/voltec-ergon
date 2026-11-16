@@ -53,13 +53,27 @@ $app->get("/equipo", function (ServerRequestInterface $request, $response) use (
   ], "layouts/site.php");
 });
 
-$app->get("/trabajos", function (ServerRequestInterface $request, $response) use ($renderer) {
-  return view($renderer, $response, "site/trabajos.php", [
-    "active" => "/trabajos",
-    "title" => "Voltec, cliente YPF — Voltec Ergon",
-    "description" => "Voltec: un medidor de consumo eléctrico por artefacto con corte por relé, en la caja Eco Smart Grid, hecho por Voltec Ergon para YPF.",
-    "canonicalUrl" => baseUrl($request) . "/trabajos",
+$app->get("/clientes", function (ServerRequestInterface $request, $response) use ($renderer) {
+  return view($renderer, $response, "site/clientes.php", [
+    "active" => "/clientes",
+    "title" => "Clientes — Voltec Ergon",
+    "description" => "Los clientes de Voltec Ergon y lo que hicimos para cada uno. Nuestro cliente más grande hasta el momento es Voltec.",
+    "canonicalUrl" => baseUrl($request) . "/clientes",
   ], "layouts/site.php");
+});
+
+$app->get("/clientes/voltec", function (ServerRequestInterface $request, $response) use ($renderer) {
+  return view($renderer, $response, "site/cliente-voltec.php", [
+    "active" => "/clientes",
+    "title" => "Caso Voltec — Clientes — Voltec Ergon",
+    "description" => "Para Voltec hicimos un medidor de consumo eléctrico por artefacto con corte por relé, montado en la caja Eco Smart Grid.",
+    "canonicalUrl" => baseUrl($request) . "/clientes/voltec",
+  ], "layouts/site.php");
+});
+
+// La antigua página de trabajos ahora vive en el apartado de clientes.
+$app->get("/trabajos", function (ServerRequestInterface $request, ResponseInterface $response) {
+  return $response->withHeader("Location", "/clientes")->withStatus(301);
 });
 
 $app->get("/contacto", function (ServerRequestInterface $request, $response) use ($renderer) {
@@ -119,7 +133,8 @@ $app->get("/sitemap.xml", function (ServerRequestInterface $request, ResponseInt
     ["path" => "/", "priority" => "1.0"],
     ["path" => "/servicios", "priority" => "0.8"],
     ["path" => "/equipo", "priority" => "0.6"],
-    ["path" => "/trabajos", "priority" => "0.8"],
+    ["path" => "/clientes", "priority" => "0.8"],
+    ["path" => "/clientes/voltec", "priority" => "0.7"],
     ["path" => "/contacto", "priority" => "0.7"],
     ["path" => "/privacidad", "priority" => "0.2"],
     ["path" => "/terminos", "priority" => "0.2"],
