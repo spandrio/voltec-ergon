@@ -7,95 +7,68 @@
 $enviado = $enviado ?? false;
 $errores = $errores ?? [];
 $old = $old ?? [];
+$servicios = ["web" => "Desarrollo web a medida", "iot" => "Electrónica e IoT", "auditoria" => "Auditoría energética", "soporte" => "Soporte y mantenimiento"];
 ?>
 <section class="page-header">
-  <div class="wrap reveal">
-    <span class="eyebrow">Contacto</span>
+  <div class="wrap">
     <h1>Contanos qué necesitás.</h1>
-    <p class="lead">Completá el formulario con tu consulta y te respondemos con una propuesta.</p>
+    <p class="lead">Completá el formulario y te respondemos con una propuesta. Si preferís, escribinos directamente por email.</p>
   </div>
 </section>
 
-<section class="bg-white" style="padding-top:20px;">
-  <div class="wrap contact-grid">
-    <div>
-      <div class="contact-card reveal-left">
-        <div class="ico">@</div>
-        <div><h5>Email</h5><a href="mailto:ergonvoltec@gmail.com">ergonvoltec@gmail.com</a></div>
-      </div>
-      <div class="contact-card reveal-left" style="transition-delay:.06s;">
-        <div class="ico">#</div>
-        <div><h5>Institución</h5><p>E.E.S.T. N°4 de Berazategui — Proyecto institucional con Fundación YPF</p></div>
-      </div>
-      <div class="contact-card reveal-left" style="transition-delay:.18s;">
-        <div class="ico">→</div>
-        <div><h5>Proyecto técnico</h5><a href="https://github.com/spandrio/voltec">Ver repositorio de Voltec</a></div>
-      </div>
-    </div>
-
-    <div class="contact-form reveal">
+<section class="sec">
+  <div class="wrap contact">
+    <div class="form">
       <?php if ($enviado): ?>
-        <div style="background:rgba(15,184,138,.1);border:1px solid rgba(15,184,138,.35);border-radius:10px;padding:16px 18px;color:#0A7A5C;font-size:14.5px;">
-          <b>¡Listo!</b> Recibimos tu consulta. Te vamos a contactar a la brevedad.
-        </div>
+        <div class="msg ok" role="status"><b>Recibimos tu consulta.</b> Te vamos a escribir al email que dejaste.</div>
+        <a href="/" class="tlink">Volver al inicio</a>
       <?php else: ?>
         <?php if (!empty($errores)): ?>
-          <div style="background:rgba(214,69,69,.08);border:1px solid rgba(214,69,69,.3);border-radius:10px;padding:14px 18px;margin-bottom:18px;color:#B0392E;font-size:13.5px;">
-            <ul style="padding-left:18px;">
-              <?php foreach ($errores as $error): ?>
-                <li><?= html($error) ?></li>
-              <?php endforeach; ?>
+          <div class="msg err" role="alert">
+            <b>Revisá estos datos antes de enviar:</b>
+            <ul>
+              <?php foreach ($errores as $error): ?><li><?= html($error) ?></li><?php endforeach; ?>
             </ul>
           </div>
         <?php endif; ?>
         <form method="POST" action="/contacto">
           <div class="field">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" value="<?= html($old['nombre'] ?? '') ?>" placeholder="Tu nombre">
+            <input type="text" id="nombre" name="nombre" autocomplete="name" value="<?= html($old['nombre'] ?? '') ?>" required>
           </div>
           <div class="field">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="<?= html($old['email'] ?? '') ?>" placeholder="tu@email.com">
+            <input type="email" id="email" name="email" autocomplete="email" value="<?= html($old['email'] ?? '') ?>" required>
           </div>
           <div class="field">
             <label for="servicio">Servicio que te interesa</label>
             <select id="servicio" name="servicio">
-              <?php foreach (["web" => "Desarrollo web a medida", "iot" => "Electrónica e IoT", "auditoria" => "Auditoría energética", "soporte" => "Soporte y mantenimiento"] as $valor => $texto): ?>
+              <?php foreach ($servicios as $valor => $texto): ?>
                 <option value="<?= html($valor) ?>" <?= ($old['servicio'] ?? '') === $valor ? 'selected' : '' ?>><?= html($texto) ?></option>
               <?php endforeach; ?>
             </select>
           </div>
           <div class="field">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Contanos qué querés resolver..."><?= html($old['mensaje'] ?? '') ?></textarea>
+            <label for="mensaje">Qué querés resolver</label>
+            <textarea id="mensaje" name="mensaje" required><?= html($old['mensaje'] ?? '') ?></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Enviar consulta</button>
-          <p style="font-size:12px;color:var(--ink-soft);margin-top:12px;text-align:center;">Al enviar este formulario aceptás nuestra <a href="/privacidad" style="color:var(--blue-brand);">Política de Privacidad</a>.</p>
+          <button type="submit" class="btn btn-ink" style="width:100%;">Enviar consulta</button>
+          <p class="note">Al enviar aceptás nuestra <a href="/privacidad">Política de Privacidad</a>. Usamos tus datos solo para responderte.</p>
         </form>
       <?php endif; ?>
     </div>
-  </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <div class="section-head reveal" style="margin:0 auto 30px;text-align:center;max-width:560px;">
-      <span class="eyebrow">Preguntas frecuentes</span>
-      <h2>Antes de escribirnos</h2>
-    </div>
-    <div class="faq-list" style="margin:0 auto;">
-      <details class="faq-item reveal">
-        <summary>¿Qué servicios ofrecen?</summary>
-        <div class="a">Desarrollo web a medida, electrónica e IoT, auditoría energética y soporte. El detalle está en la página de <a href="/servicios" style="color:var(--blue-brand);">Servicios</a>.</div>
-      </details>
-      <details class="faq-item reveal" style="transition-delay:.08s;">
-        <summary>¿Cómo pido un presupuesto?</summary>
-        <div class="a">Completá el formulario de esta página o escribinos por email. Relevamos tu caso y te enviamos un presupuesto antes de empezar.</div>
-      </details>
-      <details class="faq-item reveal" style="transition-delay:.16s;">
-        <summary>¿Qué datos míos guardan?</summary>
-        <div class="a">Solo los que dejás en el formulario, para responderte. Está explicado en la <a href="/privacidad" style="color:var(--blue-brand);">Política de Privacidad</a>.</div>
-      </details>
+    <div>
+      <dl class="ways">
+        <div><dt>Email</dt><dd><a href="mailto:ergonvoltec@gmail.com">ergonvoltec@gmail.com</a></dd></div>
+        <div><dt>Institución</dt><dd>E.E.S.T. N°4 de Berazategui, con Fundación YPF</dd></div>
+        <div><dt>Proyecto técnico</dt><dd><a href="https://github.com/spandrio/voltec">Repositorio de Voltec</a></dd></div>
+      </dl>
+      <div class="faq" style="margin-top:48px;">
+        <details><summary>¿Cuánto tardan en responder?</summary><p>Leemos cada consulta y te respondemos por email con los pasos a seguir.</p></details>
+        <details><summary>¿Qué datos míos guardan?</summary><p>Solo los que dejás en el formulario, para responderte. Está explicado en la <a href="/privacidad">Política de Privacidad</a>.</p></details>
+        <details><summary>¿Puedo pedir más de un servicio?</summary><p>Sí. Elegí el principal en el formulario y contanos el resto en el mensaje.</p></details>
+      </div>
     </div>
   </div>
 </section>
