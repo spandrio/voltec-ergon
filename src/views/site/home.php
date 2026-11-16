@@ -31,7 +31,7 @@ $svg = fn(string $k) => '<svg viewBox="0 0 24 24" width="26" height="26" fill="n
     <aside class="hero-card" aria-label="Proyecto en curso">
       <div class="hc-top">
         <span class="hc-label">Proyecto en curso</span>
-        <span class="pill">Cliente: E.E.S.T. N°4</span>
+        <span class="pill">Cliente: YPF</span>
       </div>
       <h3>Eco Smart Grid</h3>
       <p>Medidor de consumo eléctrico para tres artefactos, con corte por relé.</p>

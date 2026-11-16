@@ -1,7 +1,7 @@
 # Voltec Ergon
 
 **Descripción:**
-Voltec Ergon es la consultora técnica que diseñó, instaló y desarrolló el software del sistema **Eco Smart Grid** (con su app **Energhost**) para la comunidad educativa de la E.E.S.T N°4 de Berazategui. Este repositorio es el sitio institucional de la consultora: presenta los servicios que ofrecemos (auditoría energética, instalación y monitoreo IoT, desarrollo de software y consultoría en sustentabilidad), el equipo detrás del proyecto y nuestro trabajo insignia.
+Voltec Ergon es una consultora de tecnología: desarrollo web a medida, electrónica e IoT, auditoría energética y soporte. Su proyecto para el cliente **YPF** es **Eco Smart Grid**, un medidor de consumo eléctrico por artefacto. Este repositorio es el sitio institucional de la consultora.
 
 > El proyecto técnico en sí — hardware, firmware y catálogo de módulos — vive en un repositorio aparte: [voltec](https://github.com/spandrio/voltec).
 

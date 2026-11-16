@@ -8,7 +8,7 @@
   <div class="wrap reveal">
     <span class="eyebrow">Trabajos · Caso de un cliente</span>
     <h1>Eco Smart Grid</h1>
-    <p class="lead">Un medidor de consumo eléctrico por artefacto, hecho para la E.E.S.T. N°4 de Berazategui en el marco de la convocatoria de Fundación YPF.</p>
+    <p class="lead">Un medidor de consumo eléctrico por artefacto, hecho para YPF en la convocatoria de Fundación YPF, desarrollado desde la E.E.S.T. N°4 de Berazategui.</p>
   </div>
 </section>
 
